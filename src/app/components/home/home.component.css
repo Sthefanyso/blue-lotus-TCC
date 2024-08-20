@@ -1,0 +1,168 @@
+/* Header */
+
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 30px;
+    gap: 50px;
+}
+
+header nav ul .blue-button{
+    background-color: #2B5FB5;
+    color: #FFF;
+    width: 8em;
+    padding: 0.4em;
+    border: solid #FFF;
+    border-radius: 2em;
+}
+
+/* Main */ 
+.presentation{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+
+/* Main Left Column */ 
+.presentation .left-column{
+    flex:1;
+    padding: 50px;
+}
+
+.presentation-description{
+    width: 50%;
+    margin: 10% 0%;
+    color: #126B5E;
+}
+
+.green-button{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #126B5E;
+    background-color: transparent;
+    border-radius: 2em;
+    border-color:#126B5E;
+    padding: 0.5em;
+    width: 50%;
+    height: 15%;
+}
+
+/* Main Right Column */ 
+.presentation .right-column{
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+.presentation .right-column img{
+    margin-top: 8%;
+    width: 300px;  
+    height: 300px;  
+}
+
+/* Chatbot */ 
+.chatbot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.chatbot img{
+    width: 30%;
+    height: 30%;
+}
+
+.chatbot-presentation{
+    width: 50%;
+    text-align: center;
+}
+
+/* Features */ 
+.text-features{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.container-features{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-features img{
+    width: 60%;
+    height: 60%;
+}
+
+.container-features .description-features{
+    text-align: center;
+    width: 70%;
+}
+
+/* Features - Columns*/ 
+.container-features .features-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.container-features .features-middle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.container-features .features-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+/* Compatibility */ 
+
+.compatibility{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.compatibility p{
+    text-align: center;
+    width: 30%;
+}
+
+/* Footer */ 
+.container-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5% 0%;
+}
+
+.rights{
+    font-size: 10px;
+    margin-left: 40px;
+}
+
+.options-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25%;
+}
+
+.midias-footer img{
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    margin: 0 25px;
+}

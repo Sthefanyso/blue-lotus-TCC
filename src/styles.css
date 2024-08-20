@@ -25,3 +25,8 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
+img{
+    margin: 0;
+    padding: 0;
+}
