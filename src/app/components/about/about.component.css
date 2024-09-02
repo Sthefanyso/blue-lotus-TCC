@@ -1,3 +1,4 @@
+/* Text Column left */ 
 main{
     display: flex;
     flex-direction: row;
@@ -8,9 +9,20 @@ main .origin{
     margin: 5em 5em;
 }
 
+main .origin .names{
+    margin-left: 40%;
+}
+
 main .origin p{
     margin-top: 5%;
     width: 80%;
+}
+
+button{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin-top: 8%;
 }
 
 /* Images Column right */ 
