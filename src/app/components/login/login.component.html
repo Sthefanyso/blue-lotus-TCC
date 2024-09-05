@@ -1,1 +1,35 @@
-<p>login works!</p>
+<main class="main">
+    <div class="column-image">
+        <div class="image">
+            <img src="assets/login/Reset password-pana.png" alt=""><br>
+        </div>
+        <div class="return">
+            <button class="btn-return" (click)="voltar()"><img src="assets/login/btn-return.png" alt=""></button>
+        </div>
+    </div>
+    <div class="box-model">
+        <img class="wave-background" src="assets/login/right-wave.png" alt="">
+        <h2>
+            Seja bem-vindo(a) ao Blue Lotus
+        </h2>
+        <div class="text-fields">
+            <p>Email<br><input type="email" name="email" id=""></p>
+            <p>Senha<br><input type="password" name="senha" id=""></p>
+        </div>
+        <div class="forgot-password">
+            <p>Esqueceu a senha?</p>
+        </div>
+        <button class="btn-green">Entrar</button>
+        <div class="midia">
+            <button>
+                <img src="assets/login/icon-google.png" alt="">                
+            </button>
+            <button>
+                <img src="assets/login/icon-facebook.png" alt="">                
+            </button>
+        </div>
+        <div class="register">
+            <p>Ainda não possui uma conta?<span class="spaced"><a routerLink="/register">Registre-se</a></span></p>
+        </div>
+    </div>
+</main>

@@ -1,4 +1,10 @@
 /* Header */
+header{
+    background-image: url("/../assets/home/wave-top-left.png");
+    background-repeat: no-repeat;
+    height: 15rem;
+    z-index: -1;
+}
 
 header nav ul{
     display: flex;
@@ -18,17 +24,18 @@ header nav ul .blue-button{
     border-radius: 2em;
 }
 
+
 /* Main */ 
 .presentation{
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
+
 }
 
 /* Main Left Column */ 
 .presentation .left-column{
     flex:1;
-    padding: 50px;
+    margin: 0 1rem 1rem 5rem;
 }
 
 .presentation-description{

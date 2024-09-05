@@ -14,12 +14,10 @@ main .form{
 }
 
 button{
-    padding: 0;
-    border: none;
-    background-color: transparent;
     display: flex;
     justify-content: center;
     margin-top: 15em;
+    margin-left: 12em;
 }
 
 .box-midia{
