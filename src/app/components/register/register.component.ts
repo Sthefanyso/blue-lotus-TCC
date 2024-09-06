@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  constructor(private location: Location) {}
 
+  voltar() {
+    this.location.back();
+  }
 }

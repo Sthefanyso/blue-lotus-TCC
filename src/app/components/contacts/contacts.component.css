@@ -13,19 +13,35 @@ main .form{
     flex: 3;
 }
 
-button{
+.return button{
     display: flex;
     justify-content: center;
-    margin-top: 15em;
+    margin-top: 14em;
     margin-left: 12em;
+}
+
+.midia{
+    background-image: url("/../assets/contacts/left-wave.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+.form{
+    background-image: url("/../assets/contacts/upper-right-wave.png");
+    background-repeat: no-repeat;
+    background-position: top right;
 }
 
 .box-midia{
     width: 10em;
     height: 14em;
+    background-color: #FFFF;
     border-radius: 1em;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    margin: 3em 5em;
+    margin: 8em 5em 0 5em;
     text-align: center;
     align-items: center;
     padding: 2em;
@@ -42,6 +58,7 @@ button{
 .box-form{
     width: 80%;
     height: 30em;
+    background-color: #FFFF;
     border-radius: 1em;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     margin: 3em 0em;
@@ -51,7 +68,12 @@ button{
 
 .box-form p{
     text-align: left;
-    margin: 2em 5em;
+    margin: 1em 5em;
+}
+
+.btn-submit{
+    display: flex;
+    justify-content: end;
 }
 
 .btn-submit input{
@@ -66,4 +88,9 @@ input{
     height: 2em;
     border-radius: 0.5em;
     border: 0.1em solid #BCBEC0;
+}
+
+.box-form .message{
+    width: 100%;
+    height: 5rem;
 }

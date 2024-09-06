@@ -91,7 +91,7 @@ h2{
     color: #1976D2;
 }
 
-/* Adiciona margen a esquerda dentro dos campos de texto do form*/ 
+/* Adiciona margem a esquerda dentro dos campos de texto do form*/ 
 input[type="email"] {
     padding-left: 1rem; 
 }

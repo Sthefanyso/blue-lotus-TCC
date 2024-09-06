@@ -1,1 +1,38 @@
-<p>register works!</p>
+<div class="container">
+    <div class="box-model">
+        <div class="header">
+            <h2 id="title">
+                Crie sua conta agora
+            </h2>
+            <button id="close-btn" (click)="voltar()">
+                <img src="assets/register/close-btn.png" alt="">
+            </button>
+        </div>
+        <div class="main">
+            <div class="box-form">
+                <form action="">
+                    <p>Nome<br><input type="text" name="nome" id=""></p>
+                    <p>Sobrenome<br><input type="text" name="sobrenome" id=""></p>
+                    <p>E-mail<br><input type="email" name="" id=""></p>
+                    <p>Telefone<br><input type="tel" name="" id=""></p>
+                    <p>Senha<br><input type="password" name="" id=""></p>
+                    <p>Confirmar senha<br><input type="password" name="" id=""></p>
+                    <p>Data de nascimento<br><input type="date" name="" id=""></p>
+                    <label for="generos">Gênero<br></label>
+                    <select id="genero" name="genero">
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="nao-declarar">Prefiro não declarar</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <input type="checkbox" name="termos" id="termos"><span class="spaced"></span>
+            <u><label for="termos">Li e concordo com os termos de uso</label></u>
+            <button>
+                Criar
+            </button>
+        </div>
+    </div>
+</div>
