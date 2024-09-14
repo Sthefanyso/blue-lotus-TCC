@@ -1,8 +1,11 @@
-/* Text Column left */ 
+/* Coluna de texto a esquerda
+    Flexbox horizanl
+    Declara imagem para o background
+*/ 
 main{
     display: flex;
     flex-direction: row;
-    background-image: url("/../assets/about/left-top-wave.png");
+    background-image: url("/../assets/about/left-top-wave.png"); /* Posiciona a onda à esquerda*/ 
     background-repeat: no-repeat;
 }
 
@@ -18,7 +21,6 @@ main .origin .names{
 
 main .origin p{
     margin-top: 5%;
-    width: 100%;
 }
 
 button img{
@@ -26,22 +28,22 @@ button img{
     width: 6rem;
 }
 
-/* Images Column right */ 
+/* Coluna de imagens à direita */ 
+/* 
+    Define o espaço que a coluna
+*/ 
 main .images{
     flex:3;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url("/../assets/about/right-wave.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 125% 110%;
 }
 
 main .images img{
     width: 12em;
     height: 12em;   
-}
-
-.images{
-    background-image: url("/../assets/about/right-wave.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 125% 110%;
 }
