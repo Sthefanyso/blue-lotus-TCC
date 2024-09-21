@@ -1,7 +1,8 @@
 /* Header */
 header{
-    background-image: url("/../assets/home/wave-top-left.png");
+    background-image: url("/../assets/home/wave-top-left.svg");
     background-repeat: no-repeat;
+    background-size: contain;
     height: 15rem;
     z-index: -1;
 }
