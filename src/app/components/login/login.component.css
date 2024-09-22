@@ -3,7 +3,7 @@
 .main{
     display: flex;
     flex-direction: row;
-    background-image: url('/../assets/login/left-top-wave.png');
+    background-image: url('/../assets/home/wave-top-left.svg');
     background-repeat: no-repeat;
     z-index: -1;
 }

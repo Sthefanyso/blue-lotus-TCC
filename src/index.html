@@ -10,4 +10,72 @@
 <body>
   <app-root ngSkipHydration></app-root>
 </body>
+<script>
+          const rasaEndpoint = "http://localhost:5005/webhooks/rest/webhook"; // URL do Rasa
+
+// Função para enviar mensagem do usuário
+function sendMessage() {
+    const userInput = document.getElementById("user-input").value;
+    if (userInput.trim() === "") return;
+
+    // Adiciona a mensagem do usuário na tela
+    addMessageToChat(userInput, 'user-message', 'user');
+    
+    // Envia a mensagem para o Rasa
+    fetch(rasaEndpoint, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            sender: "user",  // Pode ser um ID único do usuário
+            message: userInput
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Processa a resposta do Rasa
+        if (data.length > 0) {
+            data.forEach(response => {
+                addMessageToChat(response.text, 'bot-message', 'bot');
+            });
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+        addMessageToChat("Ocorreu um erro ao se comunicar com o servidor.", 'bot-message');
+    });
+
+    // Limpa o campo de input
+}
+
+// Função para adicionar mensagens ao chat
+function addMessageToChat(message, messageClass, typeClass) {
+    const chatBody = document.getElementById("chat-body");
+
+    // Cria o contêiner principal
+    const textBoxElement = document.createElement("div");
+    textBoxElement.classList.add("text-box", messageClass);
+
+    // Cria o elemento da mensagem
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message");
+    messageElement.textContent = message;
+
+    // Cria o decorador de mensagem
+    const decorElement = document.createElement("div");
+    decorElement.classList.add("decor", typeClass);
+
+    // Anexa os elementos ao textBoxElement
+    textBoxElement.appendChild(messageElement);
+    textBoxElement.appendChild(decorElement);
+
+    // Adiciona o textBoxElement ao chat
+    chatBody.appendChild(textBoxElement);
+
+    // Rola o chat para a última mensagem
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+</script>
 </html>
