@@ -10,7 +10,7 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, AboutComponent, LoginComponent, RegisterComponent, ContactsComponent,ChatbotComponent,],
+  imports: [RouterOutlet, HomeComponent, AboutComponent, LoginComponent, RegisterComponent, ContactsComponent,ChatbotComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
