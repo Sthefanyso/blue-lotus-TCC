@@ -47,12 +47,13 @@ img{
   }
   
   .navigation {
-      width: 30%;
+      width: 40%;
       height: auto;
       background-image: url('/../assets/chatbot/left-wave.svg');
       /* background-size: contain; */
       background-repeat: no-repeat;
       background-size:cover;
+      align-items: left;
   
     }
   /*   
@@ -131,7 +132,6 @@ img{
     width: fit-content;
     margin-bottom: 10px;
     max-width: 50%;
-    overflow-x: hidden;
   
   }
   

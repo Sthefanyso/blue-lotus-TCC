@@ -10,16 +10,22 @@
         </div>
         <div class="main">
             <div class="box-form">
-                <form action="">
-                    <p>Nome<br><input type="text" name="nome" id=""></p>
-                    <p>Sobrenome<br><input type="text" name="sobrenome" id=""></p>
-                    <p>E-mail<br><input type="email" name="" id=""></p>
-                    <p>Telefone<br><input type="tel" name="" id=""></p>
-                    <p>Senha<br><input type="password" name="" id=""></p>
-                    <p>Confirmar senha<br><input type="password" name="" id=""></p>
-                    <p>Data de nascimento<br><input type="date" name="" id=""></p>
+                <form action="" method="post" [formGroup]="userForm">
+                    <p><label for="nome">Nome</label><br><input type="text" formControlName="name" name="nome" id=""></p>
+                    <span class="errorMessage" *ngIf="userForm.get('name')?.errors?.['required'] && userForm.get('name')?.touched">
+                        O nome é obrigatório.
+                      </span>
+                      <span class="errorMessage" *ngIf="userForm.get('name')?.errors?.['maxlength']">
+                        O nome deve ter no máximo 100 caracteres.
+                      </span>
+                    <p><label for="sobrenome">Sobrenome</label><br><input type="text" formControlName="surname" name="sobrenome" id=""></p>
+                    <p><label for="email"></label>E-mail<br><input type="email" formControlName="email" name="email" id=""></p>
+                    <p><label for="phone" mask="99/99/9999">Telefone</label><br><input type="tel" formControlName="phone" name="phone" id=""></p>
+                    <p><label for="password">Senha</label><br><input type="password" formControlName="password1" name="password" id=""></p>
+                    <p><label for="passwordRepeat">Confirmar senha</label><br><input type="password" formControlName="password2" name="passwordRepeat" id=""></p>
+                    <p><label for="date">Data de nascimento</label><br><input type="date" formControlName="birthDate" mask="99/99/9999" name="date" id=""></p>
                     <label for="generos">Gênero<br></label>
-                    <select id="genero" name="genero">
+                    <select id="genero" formControlName="gender" name="genero">
                         <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>
                         <option value="nao-declarar">Prefiro não declarar</option>
@@ -30,7 +36,7 @@
         <div class="footer">
             <input type="checkbox" name="termos" id="termos"><span class="spaced"></span>
             <u><label for="termos">Li e concordo com os termos de uso</label></u>
-            <button>
+            <button type="submit" (click)="register()">
                 Criar
             </button>
         </div>

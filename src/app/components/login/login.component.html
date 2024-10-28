@@ -13,13 +13,13 @@
             Seja bem-vindo(a) ao Blue Lotus
         </h2>
         <div class="text-fields">
-            <p>Email<br><input type="email" name="email" id=""></p>
-            <p>Senha<br><input type="password" name="senha" id=""></p>
+            <p>Email<br><input type="email" name="email" [(ngModel)]="email" id="" required></p>
+            <p>Senha<br><input type="password" id="senha" [(ngModel)]="password" name="senha" required></p>
         </div>
         <div class="forgot-password">
             <p>Esqueceu a senha?</p>
         </div>
-        <button class="btn-green">Entrar</button>
+        <button class="btn-green" (click)="login()">Entrar</button>
         <div class="midia">
             <button>
                 <img src="assets/login/icon-google.png" alt="">                
