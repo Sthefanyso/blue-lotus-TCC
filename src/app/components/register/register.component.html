@@ -19,10 +19,27 @@
                         O nome deve ter no máximo 100 caracteres.
                       </span>
                     <p><label for="sobrenome">Sobrenome</label><br><input type="text" formControlName="surname" name="sobrenome" id=""></p>
+                    <span class="errorMessage" *ngIf="userForm.get('surname')?.errors?.['maxlength']">
+                        O sobrenome deve ter no máximo 100 caracteres.
+                      </span>
                     <p><label for="email"></label>E-mail<br><input type="email" formControlName="email" name="email" id=""></p>
-                    <p><label for="phone" mask="99/99/9999">Telefone</label><br><input type="tel" formControlName="phone" name="phone" id=""></p>
+                    <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['required'] && userForm.get('email')?.touched">
+                        O e-mail é obrigatório.
+                      </span>
+                    <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['email'] && userForm.get('email')?.touched">
+                        Insira um formato válido de e-mail.
+                      </span>
+                    <p><label for="phone">Telefone</label><br><input type="tel" formControlName="phone" name="phone" id=""></p>
                     <p><label for="password">Senha</label><br><input type="password" formControlName="password1" name="password" id=""></p>
+                    <span class="errorMessage" *ngIf="userForm.get('password')?.errors?.['required'] && userForm.get('password')?.touched">
+                        A senha é obrigatória.
+                    </span>
+
+
                     <p><label for="passwordRepeat">Confirmar senha</label><br><input type="password" formControlName="password2" name="passwordRepeat" id=""></p>
+                    <span class="errorMessage" *ngIf="userForm.get('password2')?.touched || userForm.get('password2')?.dirty && userForm.get('password2')?.invalid">
+                        As senhas não coincidem.
+                      </span>
                     <p><label for="date">Data de nascimento</label><br><input type="date" formControlName="birthDate" mask="99/99/9999" name="date" id=""></p>
                     <label for="generos">Gênero<br></label>
                     <select id="genero" formControlName="gender" name="genero">

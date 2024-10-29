@@ -73,6 +73,11 @@
     background-color: transparent;
 }
 
+.errorMessage{
+    color: red;
+    font-size: 12px;
+}
+
 #close-btn img{
     width: 2.5rem;
 }

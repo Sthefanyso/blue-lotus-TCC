@@ -36,15 +36,33 @@ export class RegisterComponent implements OnInit{
       name: ['', [Validators.required, Validators.maxLength(100)]],
       surname: ['', [Validators.maxLength(100)]],
       phone: ['', [Validators.maxLength(15), Validators.minLength(14)]],
-      email: ['', [Validators.required, Validators.maxLength(250)]],
+      email: ['', [Validators.required,
+        Validators.maxLength(250),
+         Validators.minLength(5),
+         Validators.email
+         ]],
+      
+      gender: ['', [Validators.required]],
       birthDate: ['',],
       password1: ['', [Validators.required, Validators.minLength(8), this.passwordStrengthValidator()]],
-      password2: ['', [Validators.required, this.passwordMatchValidator]],
-      gender: ['', [Validators.required]],
+      password2: ['', [Validators.required, this.passwordMatchValidator]]
+    }, {
+      validator: this.passwordMatchValidator(this.userForm)
     }
     );
   }
 
+  passwordMatchValidator(group: AbstractControl){
+    const value = group.value
+    
+
+    const password = group.get('password1')?.value;
+    const confirmPassword = group.get('password2')?.value;
+    if (password !== confirmPassword){
+        return {passwordMismatch: true}
+    } 
+    return null;
+  }
 
   passwordStrengthValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -61,21 +79,13 @@ export class RegisterComponent implements OnInit{
       return !passwordValid ? { passwordStrength: true } : null;
     };
   }
+  
 
-  passwordMatchValidator(): ValidatorFn{
-    return (group: AbstractControl): ValidationErrors | null => {
-      const value = group.value
-
-      const password = group.get('password1')?.value;
-      const confirmPassword = group.get('password2')?.value;
-      return password === confirmPassword ? null : { passwordMismatch: true };
-    }
-  } 
   form = this.userForm.value;
   register(): void {
     this.authService.register(this.userForm.value).subscribe(
       (response: any) => {
-        console.log('Login bem-sucedido', response);
+        console.log('Cadastro bem-sucedido', response);
         // Redirecionar o usuário ou armazenar o token
       },
     );
