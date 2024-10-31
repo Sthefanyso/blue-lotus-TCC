@@ -1,11 +1,32 @@
 /* Header */
-header{
-    background-image: url("/../assets/home/wave-top-left.svg");
-    background-repeat: no-repeat;
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 30%;
+    background-image: url('/../assets/home/wave-top-left.svg');
     background-size: contain;
-    height: 15rem;
+    background-repeat: no-repeat;
+    background-position: left top;
     z-index: -1;
 }
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Ajuste a largura conforme necessário */
+    height: 100%; /* Ajuste a altura conforme necessário */
+    background-image: url('/../assets/home/wave-top-right.svg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+    z-index: -1; /* Posiciona atrás do conteúdo principal */
+  }
 
 header nav ul{
     display: flex;
@@ -14,6 +35,7 @@ header nav ul{
     align-items: center;
     padding: 30px;
     gap: 50px;
+    color: #FFF;
 }
 
 
@@ -22,7 +44,7 @@ header nav ul .blue-button{
     color: #FFF;
     width: 8em;
     padding: 0.4em;
-    border: solid #FFF;
+    border: none;
     border-radius: 2em;
 }
 
@@ -31,7 +53,7 @@ header nav ul .blue-button{
 .presentation{
     display: flex;
     flex-direction: row;
-
+    margin-top: 8rem;
 }
 
 /* Main Left Column */ 
@@ -41,8 +63,8 @@ header nav ul .blue-button{
 }
 
 .presentation-description{
-    width: 60%;
-    margin: 10% 0%;
+    width: 25%;
+    margin: 5% 0%;
     color: #242424;
 }
 
@@ -54,26 +76,13 @@ header nav ul .blue-button{
     border-radius: 2em;
     border-color:#126B5E;
     padding: 0.5em;
-    width: 50%;
+    width: 25%;
     height: 15%;
 }
 
 .green-button:hover{
     background-color: #126B5E;
     color: white;
-}
-
-/* Main Right Column */ 
-.presentation .right-column{
-    flex:1;
-    display: flex;
-    justify-content: center;
-}
-
-.presentation .right-column img{
-    margin-top: 8%;
-    width: 300px;  
-    height: 300px;  
 }
 
 /* Chatbot */ 
@@ -159,7 +168,13 @@ header nav ul .blue-button{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 5% 0%;
+    color: #FFF;
+
+    height: 300px;
+    background-image: url('/../assets/home/bottom-wave.png');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
 }
 
 .rights{
@@ -180,3 +195,4 @@ header nav ul .blue-button{
     padding: 5px;
     margin: 0 25px;
 }
+

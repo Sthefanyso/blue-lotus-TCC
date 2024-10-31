@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { ChatbotService } from '../../chatbot.service';
 import { provideHttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-chatbot',
   standalone: true,
@@ -13,6 +12,7 @@ import { provideHttpClient } from '@angular/common/http';
 
 })
 export class ChatbotComponent {
+
   //userInput: string = '';
   chatMessages: Array<{ message: string, type: string }> = [];
 
@@ -71,5 +71,4 @@ export class ChatbotComponent {
     chatBody.scrollTop = chatBody.scrollHeight;
   })
   }
-
 }

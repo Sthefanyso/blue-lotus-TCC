@@ -40,8 +40,12 @@ main .form{
 .return button{
     display: flex;
     justify-content: center;
-    margin-top: 14em;
+    margin-top: 12em;
     margin-left: 12em;
+}
+
+.return img{
+    width: 6rem;
 }
 
 /* 
@@ -109,6 +113,16 @@ input{
     border-radius: 0.5em;
     border: 0.1em solid #BCBEC0;
 }
+
+/* Define espaçamento dentro dos inputs*/
+input{
+    padding-left: 0.5rem; 
+} 
+
+input[class="message"] {
+    padding-left: 0.5rem; 
+    padding-bottom: 4rem;
+} 
 
 /* Estiliza o campo mensagem que é maior que os outros */ 
 .box-form .message{

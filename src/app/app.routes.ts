@@ -5,6 +5,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -13,4 +14,5 @@ export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'chatbot', component: ChatbotComponent},
+    {path: 'recover-password', component: RecoverPasswordComponent},
 ];

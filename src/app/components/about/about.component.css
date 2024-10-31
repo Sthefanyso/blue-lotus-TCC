@@ -5,7 +5,7 @@
 main{
     display: flex;
     flex-direction: row;
-    background-image: url("/../assets/about/left-top-wave.png"); /* Posiciona a onda à esquerda*/ 
+    background-image: url("/../assets/about/wave-top-left.svg"); /* Posiciona a onda à esquerda*/ 
     background-repeat: no-repeat;
 }
 
@@ -20,11 +20,10 @@ main .origin .names{
 }
 
 main .origin p{
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
-button img{
-    margin-top: 1rem;
+.return img{
     width: 6rem;
 }
 

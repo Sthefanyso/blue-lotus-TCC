@@ -79,8 +79,9 @@ img{
   .side-bar .buttons{
       display: flex;
       flex-direction: column;
-      width: 50%;
-      margin-top: 10%;
+      width: 40%;
+      margin-top: 25%;
+      margin-right: 40%;
   }
   
   .buttons button{
@@ -89,9 +90,21 @@ img{
       background-color: #FFFF;
       border-radius: 0.2rem;
       border: 5px solid #0000;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      color: #37474F;
+  }
+
+  .buttons .btn-alert{
+    background-color: #239987;
+    color: #FFFF;
   }
   
-  
+  .buttons .btn-return{
+    margin-top: 90%;
+    margin-left: 100%;
+   
+  }
+    
   .chat-container {
     width: 70%;
     height: 100vh;
@@ -166,7 +179,8 @@ img{
   .chat-footer {
     padding: 10px;
     display: flex;
-    border-top: 1px solid #ccc;
+    border: 1px solid #1D8070;
+    border-radius: 5px;
   }
   
   .chat-footer input[type="text"] {
@@ -176,15 +190,26 @@ img{
     border-radius: 5px;
     font-size: 16px;
   }
+
+  input:focus {
+    outline: none;
+  }
   
   .chat-footer button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
+    padding: 0;
     border: none;
-    border-radius: 5px;
-    margin-left: 10px;
-    cursor: pointer;
+    background-color: transparent;
+  }
+
+  /* Consertar essa parte para parar de aparecer o quadrado de seleção no botão */ 
+  .send-button:focus {
+    outline: none;
+  }
+
+  .chat-footer img{
+    width: 20px;
+    height: 20px;
+    margin-right: 25px;
   }
   
   .chat-footer button:hover {
