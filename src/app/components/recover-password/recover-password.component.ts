@@ -1,18 +1,28 @@
-import { Component } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-recover-password',
   standalone: true,
-  imports: [ModalComponent],
+  imports: [CommonModule, ModalComponent],
   templateUrl: './recover-password.component.html',
-  styleUrl: './recover-password.component.css'
+  styleUrls: ['./recover-password.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecoverPasswordComponent {
-  constructor(private location: Location) {}
+  showModal = false;
+  title = 'E-mail enviado';
+  message = 'Um link para redefinir sua senha foi enviado para o endereço de e-mail informado.';
 
-  voltar() {
-    this.location.back();
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
+  openModal() {
+    this.showModal = true;
+    this.changeDetectorRef.detectChanges(); // Forçar atualização se necessário
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 }
