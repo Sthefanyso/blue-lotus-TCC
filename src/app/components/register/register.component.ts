@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { AuthService } from '../../auth.service';
-import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import { IConfig } from 'ngx-mask';
 
 
@@ -19,6 +19,8 @@ const maskConfig: Partial<IConfig> = {
 })
 export class RegisterComponent implements OnInit{
   userForm: FormGroup = new FormGroup({});
+  passwordForm: FormGroup = new FormGroup({});
+
 
   constructor(private location: Location, private authService: AuthService, private fb: FormBuilder
   ) {}
@@ -43,26 +45,43 @@ export class RegisterComponent implements OnInit{
          ]],
       
       gender: ['', [Validators.required]],
-      birthDate: ['',],
-      password1: ['', [Validators.required, Validators.minLength(8), this.passwordStrengthValidator()]],
-      password2: ['', [Validators.required, this.passwordMatchValidator]]
-    }, {
-      validator: this.passwordMatchValidator(this.userForm)
-    }
-    );
+      birthDate: ['',]});
+
+    this.passwordForm = new FormGroup({
+      password1: new FormControl('', [Validators.required, Validators.minLength(8), this.passwordStrengthValidator()]),
+      password2: new FormControl('', [Validators.required]),
+    }, 
+      
+      [this.passwordMatchValidator('password1', 'password2')]
+      );
+
+      
   }
 
-  passwordMatchValidator(group: AbstractControl){
-    const value = group.value
-    
+    passwordMatchValidator(controlName: string, ControlRepeat: string) : ValidatorFn {
+      console.log('eits');
+      
+        return (control: AbstractControl): ValidationErrors | null => {
+          const sourceCtrl = control.get(controlName);
+          const targetCtrl = control.get(ControlRepeat);
 
-    const password = group.get('password1')?.value;
-    const confirmPassword = group.get('password2')?.value;
-    if (password !== confirmPassword){
-        return {passwordMismatch: true}
-    } 
-    return null;
-  }
+          if(sourceCtrl && targetCtrl && sourceCtrl.value !== targetCtrl.value){
+            console.log('eita');
+          }
+
+          return sourceCtrl && targetCtrl && sourceCtrl.value !== targetCtrl.value
+            ? { mismatch: true }
+            : null;
+        };
+      }
+
+      get passwordMatchError() {
+        return (
+          this.passwordForm.getError('mismatch') && this.passwordForm.get('password2')
+        );
+      }
+
+      
 
   passwordStrengthValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -80,10 +99,10 @@ export class RegisterComponent implements OnInit{
     };
   }
   
-
-  form = this.userForm.value;
   register(): void {
-    this.authService.register(this.userForm.value).subscribe(
+    const formData = { ...this.userForm.value, ...this.passwordForm.value };
+
+    this.authService.register(formData).subscribe(
       (response: any) => {
         console.log('Cadastro bem-sucedido', response);
         // Redirecionar o usuário ou armazenar o token

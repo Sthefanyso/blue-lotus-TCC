@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
   standalone: true,
-  imports: [] 
+  imports: [CommonModule] 
 })
 
 
