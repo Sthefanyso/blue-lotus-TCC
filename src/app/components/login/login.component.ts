@@ -5,8 +5,6 @@ import { AuthService } from '../../auth.service';
 import { FormsModule } from '@angular/forms';
 
 
-
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -18,13 +16,9 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private location: Location, private authService: AuthService) {}
+  constructor( private authService: AuthService) {}
 
-  voltar() {
-    this.location.back();
-  }
-
-  login(): void {
+   login(): void {
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
         console.log('Login bem-sucedido', response);

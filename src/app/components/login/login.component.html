@@ -4,8 +4,10 @@
             <img src="assets/login/Reset password-pana.png" alt=""><br>
         </div>
         <div class="return">
-            <button class="btn-return" (click)="voltar()"><img src="assets/login/btn-return.png" alt=""></button>
-        </div>
+            <button class="btn-return" routerLink="">
+                <img src="assets/login/btn-return.png" alt="">
+              </button>       
+             </div>
     </div>
     <div class="box-model">
         <img class="wave-background" src="assets/login/right-wave.png" alt="">
@@ -13,8 +15,10 @@
             Seja bem-vindo(a) ao Blue Lotus
         </h2>
         <div class="text-fields">
-            <p>Email<br><input type="email" name="email" [(ngModel)]="email" id="" required></p>
-            <p>Senha<br><input type="password" id="senha" [(ngModel)]="password" name="senha" required></p>
+            <form action="">
+                <p>Email<br><input type="email" name="email" [(ngModel)]="email" id="" required></p>
+                <p>Senha<br><input type="password" id="senha" [(ngModel)]="password" name="senha" required></p>
+            </form>
         </div>
         <div class="forgot-password">
             <a routerLink="/recover-password">Esqueceu a senha?</a>

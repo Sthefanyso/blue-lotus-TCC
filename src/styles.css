@@ -39,6 +39,14 @@ img{
     height: 10px;
 }
 
+.btn-return:hover{
+  cursor: pointer;
+}
+
+.btn-green:hover{
+  cursor: pointer;
+}
+
 /*chat*/
 .container {
     display: flex;

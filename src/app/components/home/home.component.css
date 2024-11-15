@@ -38,6 +38,9 @@ header nav ul{
     color: #FFF;
 }
 
+header nav ul a:hover{
+    text-decoration: underline;
+}
 
 header nav ul .blue-button{
     background-color: #2B5FB5;
@@ -48,6 +51,12 @@ header nav ul .blue-button{
     border-radius: 2em;
 }
 
+header nav ul .blue-button:hover{
+    background-color: #FFFF;
+    color: #2B5FB5;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /* Main */ 
 .presentation{

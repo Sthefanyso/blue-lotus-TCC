@@ -150,3 +150,7 @@ input[class="message"] {
     background-color: #239987;
     color: #FFFF;
 }
+
+.btn-submit input:hover{
+    cursor: pointer;
+}
