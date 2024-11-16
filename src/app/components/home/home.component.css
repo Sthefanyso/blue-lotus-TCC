@@ -92,6 +92,7 @@ header nav ul .blue-button:hover{
 .green-button:hover{
     background-color: #126B5E;
     color: white;
+    cursor: pointer;
 }
 
 /* Chatbot */ 
