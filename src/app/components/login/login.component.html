@@ -32,6 +32,14 @@
                 <img src="assets/login/icon-facebook.png" alt="">                
             </button>
         </div>
+
+        <app-modal 
+        [title]="title" 
+        [message]="message" 
+        [imageUrl]="imageUrl"
+        [show]="showModal">
+        </app-modal>
+        
         <div class="register">
             <p>Ainda não possui uma conta?<span class="spaced"><a routerLink="/register">Registre-se</a></span></p>
         </div>
