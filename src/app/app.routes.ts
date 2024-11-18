@@ -16,5 +16,5 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
       { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
       { path: 'recover-password', component: RecoverPasswordComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-      { path: 'chatbot', component: ChatbotComponent, canActivate: [UsuarioAutenticadoGuard] }
+      { path: 'chatbot', component: ChatbotComponent}
 ];
