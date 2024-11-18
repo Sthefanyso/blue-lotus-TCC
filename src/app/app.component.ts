@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from './components/about/about.component';
@@ -12,7 +12,7 @@ import { RecoverPasswordComponent } from './components/recover-password/recover-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, AboutComponent, LoginComponent, RegisterComponent, ContactsComponent,ChatbotComponent, ModalComponent,RecoverPasswordComponent],
+  imports: [RouterOutlet,HomeComponent,AboutComponent,LoginComponent,RegisterComponent, ContactsComponent,ChatbotComponent, ModalComponent,RecoverPasswordComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { AuthService } from '../../auth.service';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import { IConfig } from 'ngx-mask';
+import { ModalComponent } from '../modal/modal.component';
+
+
 
 
 const maskConfig: Partial<IConfig> = {
@@ -13,7 +16,7 @@ const maskConfig: Partial<IConfig> = {
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ModalComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -21,6 +24,11 @@ export class RegisterComponent implements OnInit{
   userForm: FormGroup = new FormGroup({});
   passwordForm: FormGroup = new FormGroup({});
   termosChecked: boolean = false;
+  showModal: boolean = false;
+  title: string = 'Falha no registro';  // Título da tela inicial
+  message: string = '';  // Mensagem que será exibida no modal
+  imageUrl = 'assets/recover-password/loading.svg';
+
 
 
 
@@ -86,6 +94,7 @@ export class RegisterComponent implements OnInit{
 
 
 
+
   register(): void {
     const formData = { ...this.userForm.value, ...this.passwordForm.value };
 
@@ -94,6 +103,24 @@ export class RegisterComponent implements OnInit{
         console.log('Cadastro bem-sucedido', response);
         // Redirecionar o usuário ou armazenar o token
       },
+
+      (error: any) => {
+        this.openModal();
+      console.error('Erro ao registrar', error);
+        
+      this.message = 'Ocorreu um erro desconhecido. Por favor, tente novamente.';
+  
+        if (error.status === 400) {
+           this.message = 'Este e-mail já está em uso. Tente usar outro.';
+         } else if (error.status === 500) {
+           this.message = 'Erro interno do servidor. Por favor, tente novamente mais tarde.';
+         }
+      }
     );
   }
+
+  openModal() {
+      this.showModal = true;  // Fecha o modal
+  }
+
 }

@@ -14,7 +14,7 @@ export class RecoverPasswordComponent {
   showModal: boolean = false;
   title: string = 'Recuperação de Senha';  // Título da tela inicial
   message: string = 'Por favor, verifique seu e-mail para redefinir a senha';  // Mensagem que será exibida no modal
-  imageUrl = 'public/assets/recover-password/loading.svg';
+  imageUrl = 'assets/recover-password/loading.svg';
   email: string = '';  // Variável para armazenar o email informado pelo usuário
 
   constructor() {}

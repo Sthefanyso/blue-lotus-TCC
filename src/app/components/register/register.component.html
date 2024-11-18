@@ -98,13 +98,20 @@
                 </div>
                 
             </form>
+
+            <app-modal 
+            [title]="title" 
+            [message]="message" 
+            [imageUrl]="imageUrl"
+            [show]="showModal">
+            </app-modal>
             </div>
 
         </div>
         <div class="footer">
             <input type="checkbox" name="termos" id="termos" (change)="toggleTermos($event)"><span class="spaced"></span>
             <u><label for="termos">Li e concordo com os termos de uso</label></u>
-            <button type="submit" [disabled]=" userForm.invalid|| passwordForm.invalid || !termosChecked" (click)="register()">
+            <button type="submit" [disabled]="userForm.invalid|| passwordForm.invalid || !termosChecked" (click)="register()">
                 Criar
             </button>
         </div>
