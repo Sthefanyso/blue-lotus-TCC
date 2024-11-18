@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
+import {Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private apiUrl = 'http://127.0.0.1:5000';  // URL da API Flask
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   private getHttpOptions() {
     return {
@@ -18,9 +20,13 @@ export class AuthService {
     };
   }
 
-  login(email: string, password: string): Observable<any>{
-    return this.http.post(`${this.apiUrl}/login`, {email, password}, this.getHttpOptions(),
-);
+  login(username: string, password: string): Observable<any> {
+    const credentials = btoa(username + ':' + password); // Codificando as credenciais em Base64
+    const headers = new HttpHeaders({
+      'Authorization': 'Basic ' + credentials // Enviando o cabeçalho Authorization
+    });
+
+    return this.http.post<any>(`${this.apiUrl}/auth`, {}, { headers: headers }); // Enviando a solicitação POST com cabeçalho
   }
 
   register(values: any): Observable<any>{

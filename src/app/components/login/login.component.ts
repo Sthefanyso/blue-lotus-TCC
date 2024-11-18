@@ -1,28 +1,36 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { AuthService } from '../../auth.service';
 import { FormsModule } from '@angular/forms';
 
 
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule,],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  message: string = '';
 
-  constructor( private authService: AuthService) {}
+  constructor(private location: Location, private authService: AuthService, private router: Router) {}
 
-   login(): void {
+  voltar() {
+    this.location.back();
+  }
+
+  login(): void {
     this.authService.login(this.email, this.password).subscribe(
-      (response) => {
-        console.log('Login bem-sucedido', response);
-        // Redirecionar o usuário ou armazenar o token
+      (res) => {
+        console.log('Login bem-sucedido', res);
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['chatbot']);
       },
       (error) => {
         console.error('Falha no login', error);

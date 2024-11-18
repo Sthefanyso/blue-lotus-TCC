@@ -5,7 +5,7 @@
                 Crie sua conta agora
             </h2>
             <button id="close-btn" (click)="voltar()">
-                <img src="assets/register/close-btn.png" alt="">
+                <img src="assets/register/close.svg" alt="">
             </button>
         </div>
         <div class="main">
@@ -80,6 +80,9 @@
                             <span class="errorMessage" *ngIf="passwordForm.get('password1')?.errors?.['required'] && passwordForm.get('password1')?.touched">
                                 A senha é obrigatória.
                             </span>
+                            <span class="errorMessage" *ngIf="passwordForm.get('password1')?.errors?.['minlength'] && passwordForm.get('password1')?.touched">
+                                Senha muito curta.
+                            </span>
         
                         </div>
                     <div class="col col-6">
@@ -99,9 +102,9 @@
 
         </div>
         <div class="footer">
-            <input type="checkbox" name="termos" id="termos"><span class="spaced"></span>
+            <input type="checkbox" name="termos" id="termos" (change)="toggleTermos($event)"><span class="spaced"></span>
             <u><label for="termos">Li e concordo com os termos de uso</label></u>
-            <button class="btn-green" type="submit" (click)="register()">
+            <button type="submit" [disabled]=" userForm.invalid|| passwordForm.invalid || !termosChecked" (click)="register()">
                 Criar
             </button>
         </div>

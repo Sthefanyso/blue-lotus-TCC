@@ -6,13 +6,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { UsuarioAutenticadoGuard } from './usuario-autenticado.guard';
+import { UsuarioNaoAutenticadoGuard } from './usuario-nao-autenticado.guard';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'contacts', component: ContactsComponent},
-    {path: 'register', component: RegisterComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'chatbot', component: ChatbotComponent},
-    {path: 'recover-password', component: RecoverPasswordComponent},
+      { path: 'about', component: AboutComponent },
+      { path: 'contacts', component: ContactsComponent },
+      { path: 'register', component: RegisterComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
+      { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
+      { path: 'recover-password', component: RecoverPasswordComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
+      { path: 'chatbot', component: ChatbotComponent, canActivate: [UsuarioAutenticadoGuard] }
 ];

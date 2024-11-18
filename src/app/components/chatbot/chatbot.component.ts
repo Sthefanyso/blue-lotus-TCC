@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChatbotService } from '../../chatbot.service';
 import { provideHttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chatbot',
@@ -16,7 +17,7 @@ export class ChatbotComponent {
   //userInput: string = '';
   chatMessages: Array<{ message: string, type: string }> = [];
 
-  constructor(private chatbotService: ChatbotService) {}
+  constructor(private chatbotService: ChatbotService, private router: Router) {}
 
   sendMessage() {
     const userInputElement = document.getElementById("user-input") as HTMLInputElement;
@@ -26,6 +27,7 @@ export class ChatbotComponent {
 
     // Adiciona a mensagem do usuário ao chat
     this.addMessageToChat(userInput, 'user-message', 'user');
+    userInputElement.value = '';
 
     // Envia a mensagem ao Rasa
     this.chatbotService.sendMessage(userInput).subscribe(
@@ -71,4 +73,12 @@ export class ChatbotComponent {
     chatBody.scrollTop = chatBody.scrollHeight;
   })
   }
+
+  logout(): void {
+      localStorage.clear();
+      this.router.navigate(['login']);
+
+  }
+
+
 }

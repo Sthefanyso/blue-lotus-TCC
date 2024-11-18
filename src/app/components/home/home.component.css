@@ -20,7 +20,7 @@ header::after {
     top: 0;
     right: 0;
     width: 65%; /* Ajuste a largura conforme necessário */
-    height: 100%; /* Ajuste a altura conforme necessário */
+    height: 125vh; /* Ajuste a altura conforme necessário */
     background-image: url('/../assets/home/wave-top-right.svg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,41 +28,19 @@ header::after {
     z-index: -1; /* Posiciona atrás do conteúdo principal */
   }
 
-header nav ul{
+
+
+.title-h1{
     display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    padding: 30px;
-    gap: 50px;
-    color: #FFF;
+    flex-wrap: wrap;
+    width: 40%;
 }
-
-header nav ul a:hover{
-    text-decoration: underline;
-}
-
-header nav ul .blue-button{
-    background-color: #2B5FB5;
-    color: #FFF;
-    width: 8em;
-    padding: 0.4em;
-    border: none;
-    border-radius: 2em;
-}
-
-header nav ul .blue-button:hover{
-    background-color: #FFFF;
-    color: #2B5FB5;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 /* Main */ 
 .presentation{
     display: flex;
     flex-direction: row;
-    margin-top: 8rem;
+    margin-top: 9rem;
+    height: 60vh;
 }
 
 /* Main Left Column */ 
@@ -75,6 +53,7 @@ header nav ul .blue-button:hover{
     width: 25%;
     margin: 5% 0%;
     color: #242424;
+    font-size: 1.1em;
 }
 
 .green-button{
@@ -92,7 +71,6 @@ header nav ul .blue-button:hover{
 .green-button:hover{
     background-color: #126B5E;
     color: white;
-    cursor: pointer;
 }
 
 /* Chatbot */ 
@@ -121,13 +99,14 @@ header nav ul .blue-button:hover{
     margin-top: 10%;
 }
 
+
 .container-features{
     display: flex;
     flex-direction: row;
 }
 
 .container-features img{
-    width: 60%;
+    width: 40%;
     height: 60%;
 }
 
@@ -178,12 +157,12 @@ header nav ul .blue-button:hover{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    justify-items: center;
     color: #FFF;
-
-    height: 300px;
-    background-image: url('/../assets/home/bottom-wave.png');
+    height: 30vh;
+    background-image: url('/../assets/home/bottom-wave.svg');
     background-size: cover;
-    background-position: bottom center;
+    background-position: 100%;
     background-repeat: no-repeat;
 }
 
@@ -206,3 +185,37 @@ header nav ul .blue-button:hover{
     margin: 0 25px;
 }
 
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 30px;
+    gap: 50px;
+    color: #FFF;
+    font-size: 1.1em;
+
+    
+}
+
+header nav ul a:hover{
+    text-decoration: underline;
+}
+
+header nav ul .blue-button{
+    background-color: #2B5FB5;
+    color: #FFF;
+    width: 8em;
+    padding: 0.4em;
+    border: none;
+    border-radius: 2em;
+    font-size: 1em;
+
+}
+
+header nav ul .blue-button:hover{
+    background-color: #FFFF;
+    color: #2B5FB5;
+    font-weight: bold;
+    cursor: pointer;
+}
