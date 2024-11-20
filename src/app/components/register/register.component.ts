@@ -29,9 +29,6 @@ export class RegisterComponent implements OnInit{
   message: string = '';  // Mensagem que será exibida no modal
   imageUrl = 'assets/recover-password/loading.svg';
 
-
-
-
   constructor(private location: Location, private authService: AuthService, private fb: FormBuilder
   ) {}
 

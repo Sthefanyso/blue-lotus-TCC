@@ -47,7 +47,7 @@
 /* Definição do tamanho, margem e bordas da box-model */ 
 .box-model{
     width: 50%;
-    height: 75vh;
+    height: 80vh;
     margin: 4rem auto;
     background-color: #FFFF;
     border-radius: 1em;

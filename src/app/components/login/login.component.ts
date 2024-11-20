@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Location, CommonModule } from '@angular/common';
 import { AuthService } from '../../auth.service';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from "../modal/modal.component";
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, FormsModule, ModalComponent],
+  imports: [RouterLink, FormsModule, ModalComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  userForm: FormGroup = new FormGroup({});
+  passwordForm: FormGroup = new FormGroup({});
   email: string = '';
   password: string = '';
   message: string = '';
@@ -22,10 +25,28 @@ export class LoginComponent {
   title: string = 'Falha no login';  // Título da tela inicial
   imageUrl = 'assets/recover-password/loading.svg';
 
-  constructor(private location: Location, private authService: AuthService, private router: Router) {}
+  constructor(private location: Location, private authService: AuthService, private router: Router, private fb: FormBuilder) {}
 
   voltar() {
     this.location.back();
+  }
+  ngOnInit(): void {
+    this.initializeForm();
+  }
+  
+  initializeForm(): void {
+    this.userForm = this.fb.group({
+      email: ['', [
+        Validators.required,
+        Validators.maxLength(250),
+        Validators.minLength(5),
+        Validators.email
+      ]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8)
+      ]],
+    });
   }
 
   login(): void {
@@ -48,7 +69,6 @@ export class LoginComponent {
     );
     
   }
-
 
   openModal() {
     this.showModal = true;  // Fecha o modal

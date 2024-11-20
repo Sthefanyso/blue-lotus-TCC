@@ -30,11 +30,11 @@ export class RecoverPasswordComponent {
     if (this.isValidEmail(this.email)) {
       this.message = 'Por favor, verifique seu e-mail para redefinir a senha';  // Mensagem de sucesso
       this.title = 'Instruções de Recuperação';  // Título do modal de sucesso
-      this.imageUrl = '';
+      this.imageUrl = 'assets/recover-password/img-success.svg';
     } else {
       this.message = 'O e-mail fornecido é inválido. Por favor, verifique e tente novamente';  // Mensagem de erro
       this.title = 'Erro na Recuperação';  // Título do modal de erro
-      this.imageUrl = '';
+      this.imageUrl = 'assets/recover-password/img-error.svg';
     }
     this.openModal();  // Abre o modal com a mensagem correspondente
   }

@@ -49,11 +49,6 @@ h2{
     margin-left: 5rem;
 }
 
-.return img{
-    margin-top: -50px;
-    width: 6rem;
-}
-
 /* Estilização completa da box-model do form (flexbox, tamanho e bordas) */ 
 .box-model{
     flex: 1;
@@ -145,4 +140,9 @@ input[type="password"] {
 
 a{
     color: #126B5E;
+}
+
+.errorMessage{
+    color: red;
+    font-size: 0.75rem;
 }

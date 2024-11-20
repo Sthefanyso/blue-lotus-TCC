@@ -32,14 +32,20 @@ img{
 }
 
 .btn-return{
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    width: 10px;
-    height: 10px;
+  background-color: #154087;
+  color: #FFFF;
+  text-transform: uppercase;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
 }
 
 .btn-return:hover{
+  background-color: #FFFF;
+  color: #154087;
+  border-color: #154087;
+  border: solid 1px;
   cursor: pointer;
 }
 

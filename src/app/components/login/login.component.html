@@ -5,7 +5,7 @@
         </div>
         <div class="return">
             <button class="btn-return" routerLink="">
-                <img src="assets/login/btn-return.png" alt="">
+                Voltar
               </button>       
              </div>
     </div>
@@ -15,11 +15,29 @@
             Seja bem-vindo(a) ao Blue Lotus
         </h2>
         <div class="text-fields">
-            <form action="">
-                <p>Email<br><input type="email" name="email" [(ngModel)]="email" id="" required></p>
-                <p>Senha<br><input type="password" id="senha" [(ngModel)]="password" name="senha" required></p>
+            <form [formGroup]="userForm">
+              <p>
+                Email<br>
+                <input type="email" formControlName="email" required>
+              </p>
+              <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['required'] && userForm.get('email')?.touched">
+                O e-mail é obrigatório.
+              </span>
+              <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['email'] && userForm.get('email')?.touched">
+                Insira um formato válido de e-mail.
+              </span>
+              <p>
+                Senha<br>
+                <input type="password" formControlName="password" required>
+              </p>
+              <span class="errorMessage" *ngIf="userForm.get('password')?.errors?.['required'] && userForm.get('password')?.touched">
+                A senha é obrigatória.
+              </span>
+              <span class="errorMessage" *ngIf="userForm.get('password')?.errors?.['minlength'] && userForm.get('password')?.touched">
+                A senha deve ter pelo menos 8 caracteres.
+              </span>
             </form>
-        </div>
+          </div>
         <div class="forgot-password">
             <a routerLink="/recover-password">Esqueceu a senha?</a>
         </div>
