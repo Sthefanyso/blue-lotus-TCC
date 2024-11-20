@@ -13,8 +13,8 @@ import { RouterLink } from '@angular/router';
 export class RecoverPasswordComponent {
   showModal: boolean = false;
   title: string = 'Recuperação de Senha';  // Título da tela inicial
-  message: string = 'Por favor, verifique seu e-mail para redefinir a senha';  // Mensagem que será exibida no modal
-  imageUrl = 'assets/recover-password/loading.svg';
+  message: string = '';  // Mensagem que será exibida no modal
+  imageUrl = '';
   email: string = '';  // Variável para armazenar o email informado pelo usuário
 
   constructor() {}
@@ -30,9 +30,11 @@ export class RecoverPasswordComponent {
     if (this.isValidEmail(this.email)) {
       this.message = 'Por favor, verifique seu e-mail para redefinir a senha';  // Mensagem de sucesso
       this.title = 'Instruções de Recuperação';  // Título do modal de sucesso
+      this.imageUrl = '';
     } else {
       this.message = 'O e-mail fornecido é inválido. Por favor, verifique e tente novamente';  // Mensagem de erro
       this.title = 'Erro na Recuperação';  // Título do modal de erro
+      this.imageUrl = '';
     }
     this.openModal();  // Abre o modal com a mensagem correspondente
   }

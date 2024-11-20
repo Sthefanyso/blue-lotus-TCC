@@ -18,7 +18,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   message: string = '';
-    showModal: boolean = false;
+  showModal: boolean = false;
   title: string = 'Falha no login';  // Título da tela inicial
   imageUrl = 'assets/recover-password/loading.svg';
 

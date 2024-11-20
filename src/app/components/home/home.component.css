@@ -22,7 +22,7 @@ header::after {
     width: 65%; /* Ajuste a largura conforme necessário */
     height: 125vh; /* Ajuste a altura conforme necessário */
     background-image: url('/../assets/home/wave-top-right.svg'); /* Substitua pelo caminho da sua imagem */
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
     z-index: -1; /* Posiciona atrás do conteúdo principal */
@@ -39,7 +39,7 @@ header::after {
 .presentation{
     display: flex;
     flex-direction: row;
-    margin-top: 9rem;
+    margin-top: 6rem;
     height: 60vh;
 }
 
@@ -71,6 +71,7 @@ header::after {
 .green-button:hover{
     background-color: #126B5E;
     color: white;
+    cursor: pointer;
 }
 
 /* Chatbot */ 
@@ -191,11 +192,13 @@ header nav ul{
     justify-content: end;
     align-items: center;
     padding: 30px;
-    gap: 50px;
+    gap: 30px;
     color: #FFF;
     font-size: 1.1em;
+}
 
-    
+header nav ul a{
+    font-size: medium;
 }
 
 header nav ul a:hover{

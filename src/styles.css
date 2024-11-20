@@ -73,37 +73,94 @@ img{
     align-items: center;
   }
 
+  .side-bar .return{
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+  }
+
   .side-bar img{
     width: 10rem;
     height: auto;
-    margin-top: 50%;
+    margin-top: 20%;
   }
     
   .side-bar .buttons{
       display: flex;
       flex-direction: column;
-      width: 60%;
+      width: 80%;
       margin-top: 10%;    
+      
   }
   
   .buttons button{
       margin: 0.5rem 0;
       height: 3rem;
       background-color: #FFFF;
+      color: #37474F;
+      text-align: right;
+      font-size: medium;
+      padding: 0rem 1rem;
       border-radius: 0.2rem;
       border: 5px solid #0000;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      color: #37474F;
   }
 
   .side-bar .box-model-profile{
     height: 6rem;
-    background-color: #ccc;
+    margin-top: 70%;
+    background-color: #44669f;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
   }
-   
+
+  .box-model-profile{
+    display: flex;
+  }
+
+  .logo-profile{
+    overflow: hidden;
+    margin: 0 0.5rem; 
+    
+  }
+  
   .box-model-profile img{
     width: 3rem;
     height: auto;
+  }
+
+  .box-model-profile .info-profile{
+    font-size: small;
+    color: #FFFF;
+  }
+
+  .info-profile h3{
+    font-weight: bold;
+  }
+
+  .box-model-profile .info-profile button{
+    width: 80%;
+    height: 1.5rem;
+    font-size: small;
+    text-align: center;
+    color: #1E1E1E;
+    margin-top: 1rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .box-model-profile .info-profile button:hover{
+    cursor: pointer;
+  }
+
+  .box-model-profile .info-profile img{
+    width: 1rem;
+    height: auto;
+    padding: 0;
+    margin: 0;   
   }
 
   .chat-container {
@@ -202,17 +259,12 @@ img{
     background-color: transparent;
   }
 
-  /* Consertar essa parte para parar de aparecer o quadrado de seleção no botão */ 
-  .send-button:focus {
-    outline: none;
+  .chat-footer button{
+    cursor: pointer;
   }
 
   .chat-footer img{
     width: 20px;
     height: 20px;
     margin-right: 25px;
-  }
-  
-  .chat-footer button:hover {
-    background-color: #0056b3;
   }

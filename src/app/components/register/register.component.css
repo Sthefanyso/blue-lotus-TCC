@@ -47,7 +47,7 @@
 /* Definição do tamanho, margem e bordas da box-model */ 
 .box-model{
     width: 50%;
-    height: 70vh;
+    height: 75vh;
     margin: 4rem auto;
     background-color: #FFFF;
     border-radius: 1em;
@@ -73,6 +73,10 @@
 #close-btn{
     border: none;
     background-color: transparent;
+}
+
+#close-btn:hover{
+    cursor: pointer;
 }
 
 .errorMessage{
@@ -113,13 +117,12 @@
 input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"] {
     padding-left: 0.5rem;
 
-    
 
 }
 
 /* Footer - check do termos de uso e botão "criar" */
 .footer input{
-    margin-left: 5rem;
+    margin-left: 2rem;
     margin-top: 1rem;
 }
 
@@ -135,6 +138,10 @@ input[type="text"], input[type="email"], input[type="password"], input[type="tel
 
 .footer button:disabled{
     background-color: #80cab6;
+}
+
+.footer button:hover{
+    cursor: pointer;
 }
 
 .footer label{

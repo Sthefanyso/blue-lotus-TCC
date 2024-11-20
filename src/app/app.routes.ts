@@ -13,8 +13,8 @@ export const routes: Routes = [
     {path: '', component: HomeComponent},
       { path: 'about', component: AboutComponent },
       { path: 'contacts', component: ContactsComponent },
-      { path: 'register', component: RegisterComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-      { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-      { path: 'recover-password', component: RecoverPasswordComponent, canActivate: [UsuarioNaoAutenticadoGuard] },
-      { path: 'chatbot', component: ChatbotComponent}
+      { path: 'register', component: RegisterComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
+      { path: 'login', component: LoginComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
+      { path: 'recover-password', component: RecoverPasswordComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
+      { path: 'chatbot', component: ChatbotComponent, canActivate:[UsuarioAutenticadoGuard]}
 ];
