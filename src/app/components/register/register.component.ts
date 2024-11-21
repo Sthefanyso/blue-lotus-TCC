@@ -4,6 +4,7 @@ import { AuthService } from '../../auth.service';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import { IConfig } from 'ngx-mask';
 import { ModalComponent } from '../modal/modal.component';
+import { Router } from '@angular/router';
 
 
 
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit{
   message: string = '';  // Mensagem que será exibida no modal
   imageUrl = 'assets/recover-password/loading.svg';
 
-  constructor(private location: Location, private authService: AuthService, private fb: FormBuilder
+  constructor(private location: Location, private authService: AuthService, private fb: FormBuilder, private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -98,7 +99,8 @@ export class RegisterComponent implements OnInit{
     this.authService.register(formData).subscribe(
       (response: any) => {
         console.log('Cadastro bem-sucedido', response);
-        // Redirecionar o usuário ou armazenar o token
+        this.router.navigate(['login']);
+
       },
 
       (error: any) => {

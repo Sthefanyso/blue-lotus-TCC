@@ -8,6 +8,7 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { UsuarioAutenticadoGuard } from './usuario-autenticado.guard';
 import { UsuarioNaoAutenticadoGuard } from './usuario-nao-autenticado.guard';
+import { NewPasswordComponent } from './new-password/new-password.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -16,5 +17,7 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
       { path: 'login', component: LoginComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
       { path: 'recover-password', component: RecoverPasswordComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
-      { path: 'chatbot', component: ChatbotComponent, canActivate:[UsuarioAutenticadoGuard]}
+      { path: 'chatbot', component: ChatbotComponent, canActivate:[UsuarioAutenticadoGuard]},
+      { path: 'reset-password/:token', component: NewPasswordComponent }
+
 ];
