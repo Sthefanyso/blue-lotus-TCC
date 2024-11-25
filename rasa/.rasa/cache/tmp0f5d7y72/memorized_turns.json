@@ -1,0 +1,12 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhOLE0JbGotjYWAAXQG+4=": "utter_saudacao",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhOLE0JbGoloAhpSUlqUXxYLXJifnkmkLAKRmluflF8WmpOZlVtbWxADC5UvQ=": "utter_happy",
+    "eJydjlsKgCAQRbfiAlqBW4mQwSYUfDGOQYl7T6p/o7974HC4c22TqIlwV6DZxiBFfYYK4FGKF5zNjKG7JSN1x4aOLEWGsgK1QaQwI6nb1RD/VgZXTPGR1IbOnt/+GEjpGHSWC2ePbp4=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhOLE0JbGoloAhpSUlqUXxYLXJifnkmkLAKRmluflF8SVFIOna2lgAhNlTdQ==": "utter_usuario_triste",
+    "eJydjksKgDAMRK+SA3iCXkWkhBqwYFtJEzeld7f+1hV3GfLmMWOpA5SNabfoxKdooNyHjRjIwBNWn4ViYzUTN8bHFsVARp2Ra0eiIsT2Yh2mv5bOlEVDYit8vr8N0qzIPr2djnE6AF4Pc4A=": "action_listen",
+    "eJylj0sKgDAMBa/SA3iCXkWkBI0YsK2kiZvi3a2/dUV3eeRlmLR5a0xeGFcHvVAM1uRrcAE8WnOHmZJgKF1NyKVDoUSxJoEOwFsFoiLI7uz2EL9SKiqT+shO+Fi/E9KkwBSfm1/EihyMxP54sdsBm9+OHw==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhOLE0JbGoloAhpSUlqUXxYLXJifm0NiUWAOmnUTg=": "action_listen"
+  }
+}

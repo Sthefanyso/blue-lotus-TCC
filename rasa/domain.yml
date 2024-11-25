@@ -1,0 +1,82 @@
+version: '3.1'
+intents:
+- affirm
+- ask_about_anxiety
+- ask_for_tips
+- ask_relaxation_techniques
+- bot_ask
+- deny
+- goodbye
+- greet
+- identify_symptoms
+- identify_thoughts
+- mood_happy
+- reflect_on_thought
+- seek_professional_help
+- share_bad_feeling
+- share_progress
+- thank_you
+responses:
+  utter_greet:
+  - text: Olá! Como você está se sentindo hoje?
+  utter_goodbye:
+  - text: Até logo! Lembre-se de que estou aqui sempre que precisar.
+  utter_acknowledge_feelings:
+  - text: Entendo como você está se sentindo. Vamos falar mais sobre isso?
+  utter_relaxation_techniques:
+  - text: 'Aqui estão algumas técnicas de relaxamento: respiração profunda, meditação guiada ou ouvir uma música calma. Qual você gostaria de tentar?'
+  utter_guide_relaxation:
+  - text: Vamos começar com um exercício simples. Respire fundo, inspire por 4 segundos, segure por 4 segundos e expire por 4 segundos. Faça isso por alguns minutos.
+  utter_acknowledge_progress:
+  - text: Parabéns por tentar algo novo! Isso é um grande passo. Continue assim!
+  utter_anxiety_info:
+  - text: A ansiedade é uma resposta natural ao estresse. Ela pode incluir preocupação, medo ou desconforto físico. Posso ajudar com algumas técnicas para lidar com isso.
+  utter_further_info:
+  - text: Claro! Ansiedade pode surgir de várias situações, mas também pode ser gerenciada com suporte e estratégias eficazes.
+  utter_recommend_help:
+  - text: Se achar necessário, considere procurar um terapeuta ou psicólogo. Eles podem oferecer suporte especializado.
+  utter_identify_distorted_thoughts:
+  - text: Vamos identificar juntos os pensamentos negativos. Pode me dizer o que está passando pela sua cabeça?
+  utter_suggest_realistic_thoughts:
+  - text: Uma maneira de lidar com isso é reavaliar o pensamento. O que você acha que poderia ser uma interpretação mais equilibrada?
+  utter_guide_realistic_thought:
+  - text: Ótimo! Pense em algo positivo que contradiga o pensamento negativo. Isso pode ajudar a mudar sua perspectiva.
+  utter_iamabot:
+  - text: Sou um assistente virtual, um programa projetado para ajudar com questões relacionadas à ansiedade e bem-estar emocional.  Posso oferecer estratégias, informações e apoio, no entanto, é importante lembrar que não sou um profissional humano e não posso substituir a ajuda de um terapeuta ou psicólogo. Se precisar de suporte mais especializado, posso sugerir procurar um profissional capacitado. Como posso ajudar você agora?
+  utter_happy:
+  - text: ' Fico muito feliz em saber que você está se sentindo bem! Aproveite este momento e continue cuidando de si mesmo. Se precisar de ajuda ou apenas quiser compartilhar algo, estou aqui! 😊'
+  - text: Que ótimo ouvir isso! Momentos de felicidade são preciosos. Continue aproveitando o dia e, se precisar de ajuda no futuro, pode contar comigo.
+  - text: Isso é maravilhoso! Celebrar momentos de bem-estar é importante. Se quiser conversar sobre algo ou explorar novas ideias, é só me chamar.
+  utter_offer_help:
+  - text: Estou aqui para ajudar! Podemos explorar juntos técnicas, estratégias ou simplesmente conversar. Como posso te ajudar agora?
+  - text: Me diga como posso ajudar você hoje. Estou aqui para oferecer apoio e orientação.
+  utter_help_with_thoughts:
+  - text: Vamos trabalhar juntos para entender seus pensamentos. Às vezes, nossos pensamentos podem ser mais negativos do que a realidade. Que tal analisarmos isso juntos?
+  - text: Estou aqui para ajudar com os pensamentos que estão te incomodando. Podemos identificar quais deles não são úteis e tentar reformulá-los de maneira mais equilibrada.
+  utter_reframe_thoughts:
+  - text: ' Vamos tentar reformular esse pensamento juntos.  Se essa situação fosse vivida por outra pessoa, o que você diria para ela? Talvez isso possa trazer uma perspectiva mais equilibrada.'
+  - text: Que tal pensarmos em algo mais positivo ou realista? Por exemplo, em vez de [pensamento negativo], podemos considerar [pensamento alternativo]. Como isso soa para você?
+  - text: Reformular pensamentos pode ser desafiador, mas também poderoso. Existe algo que você pode focar, como suas forças ou o apoio ao seu redor, que ajude a mudar essa perspectiva?
+  utter_ask_to_reframe_thoughts:
+  - text: ' Você já tentou ver essa situação de outra perspectiva? O que você acha que poderia ser uma interpretação mais realista ou positiva?'
+  - text: 'Vamos pensar juntos: há outra maneira de entender ou interpretar esse pensamento? Algo que possa ser mais equilibrado ou menos estressante?'
+  - text: Às vezes, reavaliar nossos pensamentos pode ajudar muito. Que tal tentarmos encontrar uma forma mais positiva ou construtiva de olhar para isso?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_acknowledge_feelings
+- utter_guide_realistic_thought
+- utter_happy
+- utter_suggest_realistic_thoughts
+- utter_goodbye
+- utter_greet
+- utter_acknowledge_progress
+- utter_help_with_thoughts
+- utter_iamabot
+- utter_reframe_thoughts
+- utter_offer_help
+- utter_anxiety_info
+- utter_identify_distorted_thoughts
+- utter_guide_relaxation
+- utter_relaxation_techniques

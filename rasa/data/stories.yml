@@ -1,0 +1,216 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_happy
+    - action: utter_happy
+
+
+- story: user shares negative thoughts
+  steps:
+    - intent: share_bad_feeling
+    - action: utter_acknowledge_feelings
+    - intent: identify_thoughts
+    - action: utter_help_with_thoughts
+    - intent: reflect_on_thought
+    - action: utter_ask_to_reframe_thoughts
+    - intent: affirm
+    - action: utter_reframe_thoughts
+
+- story: user asks for relaxation techniques
+  steps:
+    - intent: ask_relaxation_techniques
+    - action: utter_relaxation_techniques
+    - intent: affirm
+    - action: utter_guide_relaxation
+    - intent: share_progress
+    - action: utter_acknowledge_progress
+
+- story: user asks about anxiety
+  steps:
+    - intent: ask_about_anxiety
+    - action: utter_anxiety_info
+    - intent: affirm
+    - action: utter_further_info
+
+- story: user seeks professional help
+  steps:
+    - intent: seek_professional_help
+    - action: utter_recommend_help
+
+- story: user shares distorted thought
+  steps:
+    - intent: identify_thoughts
+    - action: utter_identify_distorted_thoughts
+    - intent: reflect_on_thought
+    - action: utter_suggest_realistic_thoughts
+    - intent: affirm
+    - action: utter_guide_realistic_thought
+
+# - story: fallback
+#   steps:
+#     - intent: nlu_fallback
+#     - action: utter_fallback
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: affirm
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_thoughts
+  - action: utter_identify_distorted_thoughts
+  - action: utter_help_with_thoughts
+  - intent: affirm
+  - action: utter_reframe_thoughts
+  - intent: ask_relaxation_techniques
+  - intent: reflect_on_thought
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_thoughts
+  - action: utter_help_with_thoughts
+  - intent: nlu_fallback
+  - intent: identify_thoughts
+  - action: utter_help_with_thoughts
+  - intent: seek_professional_help
+  - action: utter_help_with_thoughts
+  - intent: identify_thoughts
+  - action: utter_identify_distorted_thoughts
+  - intent: identify_thoughts
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_symptoms
+  - action: utter_help_with_thoughts
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+  - intent: ask_relaxation_techniques
+  - action: utter_guide_relaxation
+  - intent: share_progress
+  - action: utter_acknowledge_progress
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - intent: mood_happy
+  - action: utter_happy
+  - intent: mood_happy
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_happy
+  - action: utter_happy
+  - intent: nlu_fallback
+  - intent: mood_happy
+  - action: utter_happy
+  - intent: thank_you
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thank_you
+  - intent: identify_symptoms
+  - intent: bot_ask
+  - action: utter_iamabot
+  - intent: ask_about_anxiety
+  - action: utter_anxiety_info
+  - intent: thank_you
+  - action: utter_offer_help
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_thoughts
+  - action: utter_help_with_thoughts
+  - intent: identify_thoughts
+  - action: utter_help_with_thoughts
+  - intent: identify_thoughts
+  - action: utter_reframe_thoughts
+  - intent: ask_for_tips
+  - intent: identify_thoughts
+  - action: utter_reframe_thoughts
+  - action: utter_reframe_thoughts
+  - intent: ask_for_tips
+  - intent: reflect_on_thought
+  - action: utter_guide_realistic_thought
+  - intent: share_progress
+  - action: utter_acknowledge_progress
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_ask
+  - action: utter_iamabot
+  - intent: deny
+  - intent: bot_ask
+  - action: utter_iamabot
+  - intent: bot_ask
+  - action: utter_iamabot
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_progress
+  - intent: share_bad_feeling
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_progress
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: share_progress
+  - intent: identify_thoughts
+  - action: utter_help_with_thoughts
+  - intent: share_bad_feeling
+  - action: utter_suggest_realistic_thoughts
+  - intent: ask_about_anxiety
+  - intent: share_bad_feeling
+  - action: utter_guide_realistic_thought
+  - intent: nlu_fallback
+  - intent: mood_happy
+  - action: utter_acknowledge_progress
+  - intent: thank_you
+  - intent: thank_you
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye

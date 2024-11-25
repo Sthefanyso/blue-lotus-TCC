@@ -1,0 +1,260 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - ooi
+    - bom dia
+    - boa tarde
+    - boa noite
+    - moin
+    - hey
+    - hello
+    - iai
+    - bomdia
+    - boanoite
+    - boatarde
+    - oi, tudo bem?
+    - oi, como vai?
+    - e aí, tudo bem?
+    - olá boa tarde
+    - oiee
+    - olá, boa tarde
+- intent: goodbye
+  examples: |
+    - tchau
+    - ok, tchau
+    - até mais
+    - até mais tarde
+    - até
+    - falou
+    - tenha um bom dia
+    - te vejo depois
+    - tchau tchau
+    - adeus
+    - Vou descansar agora. Até mais!
+    - Obrigado, até logo.
+    - Preciso ir agora, tchau!
+    - Até logo!
+    - Tchau, obrigado por tudo!
+    - Foi ótimo conversar, até mais!
+    - Eu vou indo, tchau!
+    - Até mais, obrigada!
+    - Adeus, me senti mais tranquilo agora!
+    - obrigado, até logo
+    - ok, muito obrigado, foi ótimo conversar! até mais!
+    - muito obrigado pela atenção, até mais!
+    - por agora estou bem, preciso ir, te vejo depois!
+    - vou descansar agora, tchau!
+    - obrigado pela ajuda, preciso ir agora, até mais!
+- intent: affirm
+  examples: |
+    - sim
+    - claro
+    - com certeza
+    - isso mesmo
+    - exatamente
+    - sim, você está certo
+    - sem dúvida
+    - eu concordo
+    - isso é verdade
+    - é isso aí
+- intent: deny
+  examples: |
+    - não
+    - de jeito nenhum
+    - não, obrigado
+    - não é isso
+    - eu discordo
+    - não estou certo disso
+    - não acho que seja o caso
+    - não, eu não quero
+    - não vejo dessa forma
+    - não concordo
+- intent: thank_you
+  examples: |
+    - Obrigado
+    - Muito obrigado!
+    - Agradeço pela ajuda.
+    - Estou me sentindo melhor, obrigado.
+    - Você me ajudou muito, obrigado!
+    - Obrigado, até logo!
+    - Obrigada, você foi muito útil!
+    - Fico grato pela sua ajuda.
+    - Agradeço muito a sua ajuda.
+    - Obrigado por me ouvir.
+    - Estou mais calmo agora, obrigado!
+    - me sinto bem, obrigado
+    - entendi, obrigado por explicar
+    - obrigado, me sinto melhor agora
+- intent: mood_happy
+  examples: |
+    - perfeito
+    - ótimo
+    - maravilhoso
+    - me sinto incrível
+    - incrível
+    - bem
+    - me sinto bem
+    - estou ok
+    - super animada
+    - super animado
+    - estou me sentindo muito bem hoje
+    - meu dia foi maravilhoso
+    - estou me sentindo muito bem hoje!
+    - quero compartilhar que tive um ótimo dia
+    - Eu recebi elogios das últimas vezes
+- intent: share_bad_feeling
+  examples: |
+    - meu dia foi horrível
+    - horrível
+    - péssimo
+    - estou triste
+    - me sinto mal
+    - não me sinto bem
+    - me sinto desapontada
+    - muito triste
+    - nada bem
+    - infeliz
+    - triste
+    - Estou me sentindo ansioso.
+    - Eu estou nervoso.
+    - Estou com medo.
+    - Estou muito estressado.
+    - Sinto-me triste.
+    - Eu não estou bem hoje.
+    - Estou com muita angústia.
+    - não consigo relaxar.
+    - Sinto-me perdido.
+    - estou me sentindo ansioso e cansado
+    - me sinto ansiosa
+    - me sinto preocupado
+    - me sinto preocupada
+    - estou com medo de levar bronca do meu chefe
+    - eu poderia tentar pensar nas últimas reuniões que fizemos e os últimos feedbacks que recebi
+- intent: identify_thoughts
+  examples: |
+    - Eu acho que vou falhar.
+    - Será que algo ruim vai acontecer?
+    - Não consigo lidar com isso.
+    - Eu nunca vou conseguir.
+    - Todos vão me julgar.
+    - Eu sou um fracasso.
+    - Eu sempre faço tudo errado.
+    - Eu não sou capaz de enfrentar isso.
+    - As coisas vão sair muito mal.
+    - Ninguém vai me apoiar.
+    - sinto que vai dar tudo errado
+    - eu acho que vou falhar
+    - tenho medo de não ser suficiente para meus amigos, sempre acabo deixando eles chateados
+    - todos vão me julgar
+    - acho que vou falhar
+    - eu sinto que sempre faço tudo errado
+    - eu sinto que ninguém vai me apoiar
+    - podemos analisar juntos sim, eu sinto que sempre faço as coisas erradas e por isso ninguém vai querer se aproximar de mim
+    - sim, eu posso pensar em outras situações do passado
+    - estou preocupada com o trabalho
+- intent: bot_ask
+  examples: |
+    - você é um bot?
+    - você é um robo?
+    - você é um humano?
+    - estou falando com um humano?
+    - com quem estou falando?
+    - voce é humano
+    - voce me ama?
+    - eu te amo
+    - estou curioso sobre o que você é
+    - você não me ama?
+    - você é um humano capaz de sentir?
+- intent: ask_relaxation_techniques
+  examples: |
+    - O que posso fazer ao ficar muito estressado?
+    - como acalmar estresse?
+    - como diminuir meu estresse?
+    - como posso me acalmar?
+    - o que posso fazer ao ficar nervoso
+    - pode me ajudar com estresse?
+    - estou estressado.
+    - Me ensina a respirar melhor.
+    - Quero tentar uma técnica de relaxamento.
+    - Você pode me ajudar a me acalmar?
+    - Como posso relaxar?
+    - Me ensina a meditar para controlar a ansiedade.
+    - Eu gostaria de aprender a me acalmar.
+    - Quais são as melhores técnicas para relaxar?
+    - Como posso controlar a respiração quando estou ansioso?
+    - Existe algum truque para acalmar minha mente?
+    - eu gostaria de tentar me acalmar na verdade
+    - respiração profunda
+- intent: identify_symptoms
+  examples: |
+    - Estou me sentindo ansioso
+    - Tenho palpitações
+    - Estou inquieto
+    - Estou com dificuldade de respirar
+    - Estou nervoso
+    - estou inquieta
+- intent: ask_about_anxiety
+  examples: |
+    - O que é ansiedade?
+    - O que causa ansiedade?
+    - Por que me sinto ansioso?
+    - Por que eu me sinto assim?
+    - Como saber se estou com ansiedade?
+    - A ansiedade pode afetar meu corpo fisicamente?
+    - O que está acontecendo quando eu fico ansioso(a)?
+    - Como a ansiedade se manifesta nas pessoas?
+    - Existe cura para a ansiedade?
+    - O que é uma crise de ansiedade?
+    - eu gostaria de saber mais sobre ansiedade
+- intent: ask_for_tips
+  examples: |
+    - Como posso lidar com a ansiedade?
+    - O que devo fazer para me acalmar?
+    - Me dá dicas para controlar o estresse.
+    - Como posso melhorar meu controle emocional?
+    - O que posso fazer quando estou ansioso?
+    - Tem algo que eu possa fazer para reduzir a minha ansiedade?
+    - O que eu posso fazer para não me deixar dominar pela ansiedade?
+    - Como posso controlar melhor meus pensamentos negativos?
+    - Quais são as melhores formas de enfrentar a ansiedade?
+    - O que você recomenda para controlar o nervosismo?
+- intent: seek_professional_help
+  examples: |
+    - Preciso falar com um terapeuta.
+    - Será que eu deveria procurar ajuda profissional?
+    - Onde posso encontrar um psicólogo?
+    - Eu quero falar com um especialista.
+    - Preciso de ajuda de um profissional.
+    - Acho que seria bom falar com um terapeuta.
+    - Como posso encontrar um psicólogo que me ajude?
+    - Eu estou considerando procurar ajuda profissional.
+    - Acho que preciso de alguém que me oriente de forma mais profunda.
+    - Você pode me ajudar a encontrar um terapeuta?
+    - Estou tendo ideação suicida
+    - Penso em acabar com tudo
+    - Suicídio
+    - Quero morrer
+    - Não quero mais viver
+    - Penso em desistir de tudo
+    - Não tenho mais valor
+- intent: share_progress
+  examples: |
+    - Estou me sentindo melhor agora.
+    - Consegui controlar minha ansiedade por um tempo.
+    - Fiz o exercício que você me pediu.
+    - Estou mais calmo hoje.
+    - Eu melhorei um pouco.
+    - Me senti mais seguro(a) com a situação.
+    - Consegui parar de me preocupar tanto.
+    - Não estou mais tão ansioso(a) quanto antes.
+    - Estou começando a ver os resultados.
+    - Me sinto mais confiante hoje.
+    - estou me sentindo melhor agora
+    - isso faz sentido, me sinto melhor agora
+- intent: reflect_on_thought
+  examples: |
+    - Diria que talvez a pessoa estivesse exagerando, e pediria para ela se acalmar
+    - me soa uma boa ideia, eu posso lembrar das vezes que as pessoas já cuidaram e foram legais comigo ao invés de pensar só negativamente
