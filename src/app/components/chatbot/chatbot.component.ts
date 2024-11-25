@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChatbotService } from '../../chatbot.service';
 import { provideHttpClient } from '@angular/common/http';
@@ -12,13 +12,31 @@ import { Router } from '@angular/router';
   styleUrl: './chatbot.component.css',
 
 })
-export class ChatbotComponent {
-
+export class ChatbotComponent implements OnInit{
   //userInput: string = '';
   chatMessages: Array<{ message: string, type: string }> = [];
+  authService: any;
+  user: any;
+  unparsedUser: any;
 
   constructor(private chatbotService: ChatbotService, private router: Router) {}
 
+
+  ngOnInit(): void {
+    this.unparsedUser = localStorage.getItem('user');
+    this.user = JSON.parse(this.unparsedUser);
+
+    console.log(this.user.email);
+
+    if (!this.user) {
+      console.error('Usuário não está logado ou dados não encontrados!');
+      return; // Evita erros se o usuário não estiver logado
+    }
+    console.log('Usuário logado:', this.user);
+  
+
+  }
+  
   sendMessage() {
     const userInputElement = document.getElementById("user-input") as HTMLInputElement;
     let userInput: string = userInputElement.value.trim();

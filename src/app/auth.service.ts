@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, Observable } from 'rxjs';
+import { catchError, map, Observable, tap } from 'rxjs';
 import {Router } from '@angular/router';
 
 
@@ -9,6 +9,7 @@ import {Router } from '@angular/router';
 })
 export class AuthService {
   private apiUrl = 'http://127.0.0.1:5000';  // URL da API Flask
+  currentUser: any;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -26,20 +27,38 @@ export class AuthService {
       'Authorization': 'Basic ' + credentials // Enviando o cabeçalho Authorization
     });
 
-    return this.http.post<any>(`${this.apiUrl}/auth`, {}, { headers: headers }); // Enviando a solicitação POST com cabeçalho
+    return this.http.post<any>(`${this.apiUrl}/auth`, {}, { headers: headers }).pipe(
+      tap((res) => {
+        // Armazena os dados do usuário no login bem-sucedido
+        this.currentUser = {
+          email: res.email,
+          name: res.name,
+          surname: res.surname,
+        };
+        localStorage.setItem('user', JSON.stringify(this.currentUser));
+        console.log(localStorage.getItem('user'));
+
+      })
+    );
+  }
+
+  getCurrentUser() {
+    // Retorna o usuário logado
+    return localStorage.getItem('user');
+    
   }
 
   register(values: any): Observable<any>{
     return this.http.post(`${this.apiUrl}/register`, JSON.stringify(values), this.getHttpOptions());
 
   }
-
   
-  requestPasswordReset(email: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/reset-password`, { email });
+  requestPasswordReset(email: any): Observable<any> {
+    console.log(email);
+    return this.http.post(`${this.apiUrl}/reset_password`, email);
   }
 
   resetPassword(token: string, newPassword: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/reset-password/${token}`, { new_password: newPassword });
+    return this.http.put(`${this.apiUrl}/reset_password/newPassword/${token}`, { newPassword });
   }
 }

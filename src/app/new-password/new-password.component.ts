@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Location, CommonModule } from '@angular/common';
 import { ModalComponent } from '../components/modal/modal.component';
 import { AuthService } from '../auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -13,24 +13,33 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './new-password.component.html',
   styleUrl: './new-password.component.css'
 })
-export class NewPasswordComponent {
+
+export class NewPasswordComponent implements OnInit{
+
   token: string = '';
 
   passwordForm: FormGroup = new FormGroup({});
   showModal: boolean = false;
-  title: string = 'Falha no registro';  // Título da tela inicial
+  title: string = 'Redefinição de senha';  // Título da tela inicial
   message: string = '';  // Mensagem que será exibida no modal
   imageUrl = 'assets/recover-password/loading.svg';
 
-  
-  constructor(private route: ActivatedRoute, private location: Location, private authService: AuthService, private fb: FormBuilder
-  ) {    this.token = this.route.snapshot.params['token'];
+  constructor(private route: ActivatedRoute, private location: Location, private router: Router, private authService: AuthService, private fb: FormBuilder) {    
+    this.token = this.route.snapshot.params['token'];
   }
 
-  ngOnInit(): void {
+  voltar() {
+    this.location.back();
+  }
+
+
+  ngOnInit() {
     this.initializeForm();
+    this.route.paramMap.subscribe(params => {
+      this.token = params.get('token') || '';
+      console.log('Token recebido:', this.token);
+    });
   }
-
 
 
   initializeForm(){
@@ -63,13 +72,23 @@ export class NewPasswordComponent {
       }
 
       onSubmit() {
-        this.authService.resetPassword(this.token, this.passwordForm.value).subscribe(
+        this.authService.resetPassword(this.token, this.passwordForm.get('password1')?.value).subscribe(
           (response: any) => {
-          this.openModal
-          this.message = 'Senha redefinida com sucesso!'
-          }, (error: any) => {
-          this.message = 'Erro ao redefinir a senha.'
-        });
+            // Mensagem de sucesso
+            this.message = 'Senha redefinida com sucesso!';
+            this.openModal();
+            this.router.navigate(['login']);
+          },
+          (error: any) => {
+            // Verifica se a API retornou uma mensagem específica de erro
+            if (error?.error?.message) {
+              this.message = error.error.message;  // Exibe a mensagem de erro da API
+            } else {
+              this.message = 'Erro ao redefinir a senha.';  // Mensagem padrão se não houver erro específico
+            }
+            this.openModal();
+          }
+        );
       }
 
       openModal() {

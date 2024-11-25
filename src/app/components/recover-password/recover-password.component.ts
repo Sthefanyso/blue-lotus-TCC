@@ -1,27 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AuthService } from '../../auth.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recover-password',
   standalone: true,
-  imports: [RouterLink, CommonModule, ModalComponent],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, ModalComponent],
   templateUrl: './recover-password.component.html',
   styleUrls: ['./recover-password.component.css'],
 })
-export class RecoverPasswordComponent {
+export class RecoverPasswordComponent implements OnInit{
   showModal: boolean = false;
   title: string = 'Recuperação de Senha';  // Título da tela inicial
   message: string = '';  // Mensagem que será exibida no modal
   imageUrl = '';
-  email: string = '';  // Variável para armazenar o email informado pelo usuário
+  userForm: FormGroup = new FormGroup({});
 
   constructor(private route: ActivatedRoute, private authService: AuthService, private fb: FormBuilder
   ) { }
 
+  ngOnInit(): void {
+    this.initializeForm();
+  }
+
+
+  initializeForm(){
+  this.userForm = this.fb.group({
+    email: ['', [Validators.required]],
+  })}
   // Função para validação do formato do email
   // private isValidEmail(email: string): boolean {
   //   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -30,7 +39,8 @@ export class RecoverPasswordComponent {
 
   // Função chamada ao submeter o formulário
   recuperar() {
-    this.authService.register('bea.matos978@gmail.com').subscribe(
+    this.openModal();
+    this.authService.requestPasswordReset(this.userForm.value).subscribe(
     (response: any) => {
       this.message = 'Por favor, verifique seu e-mail para redefinir a senha';  // Mensagem de sucesso
       this.title = 'Instruções de Recuperação';  // Título do modal de sucesso

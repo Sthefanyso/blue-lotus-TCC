@@ -15,41 +15,14 @@
             Seja bem-vindo(a) ao Blue Lotus
         </h2>
         <div class="text-fields">
-            <form [formGroup]="userForm">
-              <p>
-                Email<br>
-                <input type="email" formControlName="email" required>
-              </p>
-              <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['required'] && userForm.get('email')?.touched">
-                O e-mail é obrigatório.
-              </span>
-              <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['email'] && userForm.get('email')?.touched">
-                Insira um formato válido de e-mail.
-              </span>
-              <p>
-                Senha<br>
-                <input type="password" formControlName="password" required>
-              </p>
-              <span class="errorMessage" *ngIf="userForm.get('password')?.errors?.['required'] && userForm.get('password')?.touched">
-                A senha é obrigatória.
-              </span>
-              <span class="errorMessage" *ngIf="userForm.get('password')?.errors?.['minlength'] && userForm.get('password')?.touched">
-                A senha deve ter pelo menos 8 caracteres.
-              </span>
-            </form>
-          </div>
+          <p>Email<br><input type="email" name="email" [(ngModel)]="email" id="" required></p>
+          <p>Senha<br><input type="password" id="senha" [(ngModel)]="password" name="senha" required></p>
+      </div>
         <div class="forgot-password">
             <a routerLink="/recover-password">Esqueceu a senha?</a>
         </div>
         <button class="btn-green" (click)="login()">Entrar</button>
-        <div class="midia">
-            <button>
-                <img src="assets/login/icon-google.png" alt="">                
-            </button>
-            <button>
-                <img src="assets/login/icon-facebook.png" alt="">                
-            </button>
-        </div>
+       
 
         <app-modal 
         [title]="title" 

@@ -18,6 +18,7 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
       { path: 'recover-password', component: RecoverPasswordComponent, canActivate:[UsuarioNaoAutenticadoGuard]},
       { path: 'chatbot', component: ChatbotComponent, canActivate:[UsuarioAutenticadoGuard]},
-      { path: 'reset-password/:token', component: NewPasswordComponent }
+      { path: 'password/:token', component: NewPasswordComponent }
+      
 
 ];
