@@ -1,0 +1,38 @@
+<main class="main">
+    <div class="column-image">
+        <div class="image">
+            <img src="assets/login/Reset password-pana.png" alt=""><br>
+        </div>
+        <div class="return">
+            <button class="btn-return" routerLink="">
+                Voltar
+              </button>       
+             </div>
+    </div>
+    <div class="box-model">
+        <img class="wave-background" src="assets/login/right-wave.png" alt="">
+        <h2>
+            Seja bem-vindo(a) ao Blue Lotus
+        </h2>
+        <div class="text-fields">
+          <p>Email<br><input type="email" name="email" [(ngModel)]="email" id="" required></p>
+          <p>Senha<br><input type="password" id="senha" [(ngModel)]="password" name="senha" required></p>
+      </div>
+        <div class="forgot-password">
+            <a routerLink="/recover-password">Esqueceu a senha?</a>
+        </div>
+        <button class="btn-green" (click)="login()">Entrar</button>
+       
+
+        <app-modal 
+        [title]="title" 
+        [message]="message" 
+        [imageUrl]="imageUrl"
+        [show]="showModal">
+        </app-modal>
+        
+        <div class="register">
+            <p>Ainda não possui uma conta?<span class="spaced"><a routerLink="/register">Registre-se</a></span></p>
+        </div>
+    </div>
+</main>

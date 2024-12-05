@@ -1,0 +1,31 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart_conversation
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_ask
+  - action: utter_iamabot
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: say welcome to user
+  steps:
+  - intent: thank_you
+  - action: utter_welcome
+
+- rule: rethink
+  steps:
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+
+policies: null

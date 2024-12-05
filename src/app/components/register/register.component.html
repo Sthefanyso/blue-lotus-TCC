@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="box-model">
+        <div class="header">
+            <h2 id="title">
+                Crie sua conta agora
+            </h2>
+            <button id="close-btn" (click)="voltar()">
+                <img src="assets/register/close.svg" alt="">
+            </button>
+        </div>
+        <div class="main">
+            <div class="box-form">
+                <form action="" method="post" [formGroup]="userForm">
+                    <div class="row">
+                        <div class="col col-6">
+                            <p><label for="nome">Nome</label><br><input type="text" formControlName="name" name="nome" id="nome"></p>
+                            <span class="errorMessage" *ngIf="userForm.get('name')?.errors?.['required'] && userForm.get('name')?.touched">
+                                O nome é obrigatório.
+                            </span>
+                            <span class="errorMessage" *ngIf="userForm.get('name')?.errors?.['maxlength']">
+                                O nome deve ter no máximo 100 caracteres.
+                            </span>
+                        </div>
+                            <div class="col col-6">
+                                <p><label for="sobrenome">Sobrenome</label><br><input type="text" formControlName="surname" name="sobrenome" id="sobrenome"></p>
+                            <span class="errorMessage" *ngIf="userForm.get('surname')?.errors?.['maxlength']">
+                                O sobrenome deve ter no máximo 100 caracteres.
+                            </span>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col col-6">
+                                <p>
+                                    <label for="phone">Telefone</label><br><input type="tel" formControlName="phone" name="phone" id="phone">
+                                </p>
+
+                                </div>
+
+                                <div class="col col-3">
+                                    <p>
+                                        <label for="date">Data de nascimento</label><br><input type="date" formControlName="birthDate"  mask="99/99/9999" name="date" id="date">
+                                    </p>
+                                </div>
+                                <div class="col col-3">
+                                    <label for="generos">Gênero<br></label>
+                                    <div class="select">
+                                    <select id="genero" formControlName="gender" name="genero">
+                                        <option value="feminino">Feminino</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="nao-declarar">Prefiro não declarar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col col-12">
+
+                                <p><label for="email"></label>E-mail<br>
+                                <input type="email" formControlName="email" name="email" id="email"></p>
+                                <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['required'] && userForm.get('email')?.touched">
+                                    O e-mail é obrigatório.
+                                  </span>
+                                <span class="errorMessage" *ngIf="userForm.get('email')?.errors?.['email'] && userForm.get('email')?.touched">
+                                    Insira um formato válido de e-mail.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                <div [formGroup]="passwordForm" class="row">
+                        <div class="col col-6">
+                            <p>
+                                <label for="password">Senha</label>
+                                <br>
+                                <input type="password" formControlName="password1" name="password" id="password">
+                            </p>
+                            <span class="errorMessage" *ngIf="passwordForm.get('password1')?.errors?.['required'] && passwordForm.get('password1')?.touched">
+                                A senha é obrigatória.
+                            </span>
+                            <span class="errorMessage" *ngIf="passwordForm.get('password1')?.errors?.['minlength'] && passwordForm.get('password1')?.touched">
+                                Senha muito curta.
+                            </span>
+        
+                        </div>
+                    <div class="col col-6">
+                    <p>
+                        <label for="passwordRepeat">Confirmar senha</label>
+                        <br>
+                        <input type="password" formControlName="password2" name="passwordRepeat" id="passwordRepeat">
+                    </p>
+                    <span class="errorMessage" *ngIf="passwordMatchError">
+                        As senhas não coincidem.
+                    </span>
+                        </div>
+                </div>
+                
+            </form>
+
+            <app-modal 
+            [title]="title" 
+            [message]="message" 
+            [imageUrl]="imageUrl"
+            [show]="showModal">
+            </app-modal>
+            </div>
+
+        </div>
+        <div class="footer">
+            <input type="checkbox" name="termos" id="termos" (change)="toggleTermos($event)"><span class="spaced"></span>
+            <u><label for="termos">Li e concordo com os termos de uso</label></u>
+            <button type="submit" [disabled]="userForm.invalid|| passwordForm.invalid || !termosChecked" (click)="register()">
+                Criar
+            </button>
+        </div>
+    </div>
+</div>

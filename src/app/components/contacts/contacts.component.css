@@ -1,0 +1,200 @@
+/* Define o display do conteúdo geral da página
+    Container flexbox horizontal
+*/ 
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Define o tamanho de tela e display da parte de mídia, ao lado esquerdo
+*/
+main .midia{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Define o tamanho de tela para o form, ao centro */ 
+main .form{
+    flex: 3;
+}
+
+/* Posiociona e determina tamanho da onda esquerda no background*/
+.midia{
+    background-image: url("/../assets/contacts/left-wave.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Posiciona a onda direita no background*/
+.form{
+    background-image: url("/../assets/contacts/upper-right-wave.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+/* Estilização do botão retornar para página anterior
+    Define posição ao centro, na parte inferior de seu container, e as margens
+*/ 
+.return button{
+    margin-top: 14em;
+    margin-left: 7em;
+}
+
+/* 
+    Declara o tamanho, posicionamento, cores e bordas 
+    da box-model a esquerda para as redes sociais
+    Flexbox em vertical com elementos alinhados ao centro nos dois sentidos
+*/
+.box-midia{
+    width: 10em;
+    height: 14em;
+    background-color: #FFFF;
+    border-radius: 1em;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 8em 5em 0 5em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+/* Estilo das logos das redes sociais
+    Tamanho e padding
+*/ 
+.box-midia img{
+    width: 4em;
+    height: 4em;
+    padding: 0.5em;
+}
+
+/* 
+    Declara tamanho, cor, borda e sombra da 
+    box-model do formulário ao centro
+*/
+.box-form{
+    width: 80%;
+    height: 30em;
+    background-color: #FFFF;
+    border-radius: 1em;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 3em 0em;
+    text-align: center;
+    padding: 2em;
+}
+
+
+/* Estiliza a label que antecede os campos de 
+    texto dentro do form
+    Flexbox vertical, com elementos alinhados a esquerda e 
+    margens em todos os lados
+*/
+.box-form label{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 1.2em 5em;
+}
+
+/* Estiliza os campos de texto 
+    Define tamanho e bordas
+*/
+input{
+    width: 50%;
+    height: 2em;
+    border-radius: 0.5em;
+    border: 0.1em solid #BCBEC0;
+}
+
+/* Define espaçamento dentro dos inputs*/
+input{
+    padding-left: 0.5rem; 
+} 
+
+input[class="message"] {
+    padding-left: 0.5rem; 
+    padding-bottom: 4rem;
+} 
+
+/* Estiliza o campo mensagem que é maior que os outros */ 
+.box-form .message{
+    width: 100%;
+    height: 5rem;
+}
+
+/* 
+    Estilo do botão
+*/
+
+/* Define o posicionamento do botão enviar
+    Posiciona na horizontal ao fim do espaço ocupado
+*/ 
+.btn-submit{
+    display: flex;
+    justify-content: end;
+}
+
+/* Estiliza tamanho e cor do botão enviar
+*/
+.btn-submit input{
+    width: 10em;
+    height: 2.5em;
+    background-color: #239987;
+    color: #FFFF;
+}
+
+.btn-submit input:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 1920px){
+    .box-midia{
+        margin-top: 40%;
+        width: 12em;
+        height: 20em;
+    }
+
+    .box-midia p{
+        font-size: 1.5rem;
+    }
+
+    .box-midia img{
+        width: 5em;
+        height: 5em;
+        padding: 0.5em;
+    }
+
+    .return button{
+        margin-top: 28rem;
+        margin-left: 5rem;
+        font-size: 2rem;
+        width: 20rem;
+        height: 4rem;
+    }
+
+    .box-form{
+        margin-top: 8rem;
+        height: 50rem;
+    }
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    label{
+        font-size: 2rem;
+    }
+
+    input{
+        height: 4rem;
+        font-size: 2rem;
+    }
+
+    .btn-submit{
+        margin-top: -3rem;
+        margin-right: 2rem;
+    }
+    
+}

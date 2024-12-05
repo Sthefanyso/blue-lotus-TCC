@@ -1,0 +1,482 @@
+version: "3.1"
+nlu:
+- intent: out_of_scope
+  examples: |
+    - quero pedir pizza
+    - quanto é 2+2?
+    - quem é o presidente?
+    - onde posso achar um lugar pra dançar?
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - ooi
+    - bom dia
+    - boa tarde
+    - boa noite
+    - moin
+    - hey
+    - hello
+    - iai
+    - bomdia
+    - boanoite
+    - boatarde
+    - oi, tudo bem?
+    - oi, como vai?
+    - e aí, tudo bem?
+    - olá boa tarde
+    - oiee
+    - olá, boa tarde
+    - oi boa tarde
+    - oizinho
+    - OI
+- intent: goodbye
+  examples: |
+    - tchau
+    - ok, tchau
+    - até mais
+    - até mais tarde
+    - até
+    - falou
+    - tenha um bom dia
+    - te vejo depois
+    - tchau tchau
+    - adeus
+    - Obrigado, até logo.
+    - Preciso ir agora, tchau!
+    - Até logo!
+    - Tchau, obrigado por tudo!
+    - Foi ótimo conversar, até mais!
+    - Eu vou indo, tchau!
+    - Até mais, obrigada!
+    - obrigado, até logo
+    - ok, muito obrigado, foi ótimo conversar! até mais!
+    - muito obrigado pela atenção, até mais!
+    - por agora estou bem, preciso ir, te vejo depois!
+    - vou descansar agora, tchau!
+    - obrigado pela ajuda, preciso ir agora, até mais!
+    - muito obrigado por hoje,tchau
+    - muito obrigado, até mais!
+    - tchau!
+    - k bye
+- intent: affirm
+  examples: |
+    - sim
+    - claro
+    - com certeza
+    - isso mesmo
+    - exatamente
+    - sim, você está certo
+    - sem dúvida
+    - eu concordo
+    - isso é verdade
+    - é isso aí
+    - quero
+- intent: deny
+  examples: |
+    - não
+    - de jeito nenhum
+    - não, obrigado
+    - não é isso
+    - eu discordo
+    - não estou certo disso
+    - não acho que seja o caso
+    - não, eu não quero
+    - não vejo dessa forma
+    - não concordo
+- intent: thank_you
+  examples: |
+    - Obrigado
+    - Muito obrigado!
+    - Agradeço pela ajuda.
+    - Estou me sentindo melhor, obrigado.
+    - Você me ajudou muito, obrigado!
+    - Obrigado, até logo!
+    - Obrigada, você foi muito útil!
+    - Fico grato pela sua ajuda.
+    - Agradeço muito a sua ajuda.
+    - Obrigado por me ouvir.
+    - Estou mais calmo agora, obrigado!
+    - me sinto bem, obrigado
+    - entendi, obrigado por explicar
+    - obrigado, me sinto melhor agora
+    - seria só isso mesmo, obrigada!
+    - Certo, obrigada.
+    - me sinto melhor, obrigada
+    - ok, obrigada
+    - estou melhor, obrigada
+    - bem melhor, obrigada!
+    - obrigada
+    - certo, obrigada!
+    - me sinto melhor, obrigda!
+- intent: mood_happy
+  examples: |
+    - perfeito
+    - ótimo
+    - estou [ótimo](feeling)
+    - estou [feliz](feeling)
+    - maravilhoso
+    - me sinto [incrível](feeling)
+    - incrível
+    - [bem](feeling)
+    - me sinto [bem](feeling)
+    - super [animada](feeling)
+    - super [animado](feeling)
+    - estou me sentindo [muito bem](feeling) hoje
+    - meu dia foi maravilhoso
+    - quero compartilhar que [tive um ótimo dia]{"entity": "feeling", "value": "feliz"}
+    - estou [tranquilo]{"entity": "feeling", "value": "calmo"}
+    - estou [calmo](feeling)
+- intent: share_bad_feeling
+  examples: |
+    - meu dia foi [horrível]{"entity": "feeling", "value": "triste"}
+    - horrível
+    - péssimo
+    - estou [triste](feeling)
+    - me sinto [mal](feeling)
+    - [não me sinto bem](feeling)
+    - me sinto [desapontada](feeling)
+    - muito [triste](feeling)
+    - [nada bem]{"entity": "feeling", "value": "triste"}
+    - [infeliz](feeling)
+    - [triste](feeling)
+    - Estou me sentindo [ansioso](feeling).
+    - Eu estou [nervoso](feeling).
+    - Estou com [medo](feeling).
+    - Estou muito [estressado]{"entity": "feeling", "value": "ansioso"}
+    - Sinto-me [triste](feeling).
+    - Eu não estou bem hoje.
+    - estou me sentindo ansioso e [cansado](feeling)
+    - me sinto [ansiosa](feeling)
+    - me sinto [preocupado]{"entity": "feeling", "value": "ansioso"}
+    - me sinto [preocupada]{"entity": "feeling", "value": "ansioso"}
+    - estou com [medo]{"entity": "feeling", "value": "triste"} de levar bronca do meu chefe
+    - [horrível](feeling)
+    - na verdade estou [decepcionado](feeling)
+    - estou muito [triste](feeling)
+    - estou [decepcionado]{"entity": "feeling", "value": "triste"}
+    - ainda estou [mal]{"entity": "feeling", "value": "triste"}
+    - meio [ansioso](feeling)
+    - estou [bravo]{"entity": "feeling", "value": "irritado"}
+    - estou [puto]{"entity": "feeling", "value": "irritado"}
+    - estou com [raiva]{"entity": "feeling", "value": "irritado"}
+    - estou [irritado](feeling)
+    - oi estou [bravo]{"entity": "feeling", "value": "irritado"}
+    - estou tão [estressado]{"entity": "feeling", "value": "ansioso"}
+    - ESTOU [TRISTE]{"entity": "feeling", "value": "triste"}
+- intent: identify_thoughts
+  examples: |
+    - [Eu acho que vou falhar](thought).
+    - Será que [algo ruim vai acontecer](thought)?
+    - Não consigo lidar com isso.
+    - Eu nunca vou conseguir.
+    - Eu sou um fracasso.
+    - acho que nao sirvo pra nada
+    - acho que vou falhar
+    - sinto que vou ser julgado
+    - Eu sempre faço tudo errado.
+    - Eu não sou capaz de enfrentar isso.
+    - As coisas vão sair muito mal.
+    - Ninguém vai me apoiar.
+    - sinto que [vai dar tudo errado](thought)
+    - eu acho que vou falhar
+    - tenho medo de [não ser suficiente para meus amigos, sempre acabo deixando eles chateados](thought)
+    - [todos vão me julgar](thought)
+    - [acho que vou falhar](thought)
+    - [eu sinto que sempre faço tudo errado](thought)
+    - [eu sinto que ninguém vai me apoiar](thought)
+    - [eu sinto que sempre faço as coisas erradas e por isso ninguém vai querer se aproximar de mim](thought)
+    - tive um dia ruim, atrasei uma demanda e [meu chefe pode ficar irrritado](thought)
+    - [meu chefe gritou comigo hoje](thought)
+    - [acho que sou um idiota e meu chefe me odeia](thought)
+    - [as vezes](thought) [acho que meu chefe me odeia](thought)
+    - [parece que](thought) [todo mundo me odeia](thought)
+    - [meus amigos me odeiam](thought)
+    - [meu chefe gritou comigo](thought)
+    - [estou](thought) [achando que meu chefe me odeia](thought)
+    - estou [achando que faço tudo errado](thought)
+    - me sinto obrigada a fazer coisas que não quero, para agradar os outros
+    - [acho que meus amigos me odeiam](thought)
+    - acho que [estou fazendo tudo errado](thought)
+    - [é que](thought) [as vezes](thought) [parece que eu faço tudo errado](thought)
+- intent: bot_ask
+  examples: |
+    - você é um bot?
+    - você é um robo?
+    - você é um humano?
+    - estou falando com um humano?
+    - com quem estou falando?
+    - voce é humano
+    - voce me ama?
+    - eu te amo
+    - estou curioso sobre o que você é
+    - você não me ama?
+    - você é um humano capaz de sentir?
+- intent: ask_relaxation_techniques
+  examples: |
+    - O que posso fazer ao ficar muito estressado?
+    - como acalmar estresse?
+    - como diminuir meu estresse?
+    - como posso me acalmar?
+    - o que posso fazer ao ficar nervoso
+    - pode me ajudar com estresse?
+    - Me ensina a respirar melhor.
+    - Quero tentar uma técnica de relaxamento.
+    - Você pode me ajudar a me acalmar?
+    - Como posso relaxar?
+    - Me ensina a meditar para controlar a ansiedade.
+    - Eu gostaria de aprender a me acalmar.
+    - Quais são as melhores técnicas para relaxar?
+    - Existe algum truque para acalmar minha mente?
+    - eu gostaria de tentar me acalmar na verdade
+    - gostaria de saber algumas técnicas por favor
+    - eu gostaria de saber técnicas pra me acalmar na verdade
+    - quero saber técnicas de relaxamento hoje por favor
+    - hoje eu quero saber sobre técniacs de relaxamento
+    - quero me acalmar
+    - quero uma técnica pra poder me acalmar, por favor
+    - pode me recomendar técnicas de relaxamento?
+    - legal, pode me ensinar uma técnica de relaxamento?
+- intent: identify_symptoms
+  examples: |
+    - Estou me sentindo ansioso
+    - Tenho palpitações
+    - Estou inquieto
+    - Estou com dificuldade de respirar
+    - Estou nervoso
+    - estou inquieta
+    - não consigo relaxar
+- intent: ask_about_anxiety
+  examples: |
+    - O que é ansiedade?
+    - O que causa ansiedade?
+    - Por que me sinto ansioso?
+    - Por que eu me sinto assim?
+    - Como saber se estou com ansiedade?
+    - A ansiedade pode afetar meu corpo fisicamente?
+    - O que está acontecendo quando eu fico ansioso(a)?
+    - Como a ansiedade se manifesta nas pessoas?
+    - Existe cura para a ansiedade?
+    - O que é uma crise de ansiedade?
+    - eu gostaria de saber mais sobre ansiedade
+    - estou curiosa sobre como a ansiedade se manifesta nas pessoas
+- intent: ask_for_tips
+  examples: |
+    - Como posso lidar com a ansiedade?
+    - O que devo fazer para me acalmar?
+    - Me dá dicas para controlar o estresse.
+    - Como posso melhorar meu controle emocional?
+    - O que posso fazer quando estou ansioso?
+    - Tem algo que eu possa fazer para reduzir a minha ansiedade?
+    - O que eu posso fazer para não me deixar dominar pela ansiedade?
+    - Como posso controlar melhor meus pensamentos negativos?
+    - Quais são as melhores formas de enfrentar a ansiedade?
+    - O que você recomenda para controlar o nervosismo?
+    - prefiro falar dos meus pensamentos
+- intent: seek_professional_help
+  examples: |
+    - Preciso falar com um terapeuta.
+    - Será que eu deveria procurar ajuda profissional?
+    - Onde posso encontrar um psicólogo?
+    - Eu quero falar com um especialista.
+    - Preciso de ajuda de um profissional.
+    - Acho que seria bom falar com um terapeuta.
+    - Como posso encontrar um psicólogo que me ajude?
+    - Eu estou considerando procurar ajuda profissional.
+    - Acho que preciso de alguém que me oriente de forma mais profunda.
+    - Você pode me ajudar a encontrar um terapeuta?
+- intent: seek_serious_help
+  examples: |
+    - Estou tendo ideação suicida
+    - Penso em acabar com tudo
+    - Suicídio
+    - Quero morrer
+    - Não quero mais viver
+    - Penso em desistir de tudo
+    - vou me matar
+    - estou querendo morrer
+    - quero me matar
+- intent: share_progress
+  examples: |
+    - Estou me sentindo melhor agora.
+    - Consegui controlar minha ansiedade por um tempo.
+    - Fiz o exercício que você me pediu.
+    - Estou mais calmo hoje.
+    - Eu melhorei um pouco.
+    - Me senti mais seguro(a) com a situação.
+    - Consegui parar de me preocupar tanto.
+    - Não estou mais tão ansioso(a) quanto antes.
+    - Estou começando a ver os resultados.
+    - Me sinto mais confiante hoje.
+    - estou me sentindo melhor agora
+    - isso faz sentido, me sinto melhor agora
+    - me sinto muito melhor
+    - muito melhor
+    - me sinto [calmo](feeling) agora
+    - estou me sentindo [feliz](feeling) agora
+- intent: reflect_on_thought
+  examples: |
+    - Diria que talvez a pessoa estivesse exagerando, e pediria para ela se acalmar
+    - me soa uma boa ideia, eu posso lembrar das vezes que as pessoas já cuidaram e foram legais comigo ao invés de pensar só negativamente
+- intent: user_response
+  examples: |
+    - Celular
+    - TV
+    - Janela
+    - Porta
+    - Mesa
+    - Cama
+    - Armário
+    - Lâmpada
+    - Computador
+    - Estante
+    - Relógio
+    - Livro
+    - Planta
+    - Roupas
+    - Sapatos
+    - Céu
+    - Árvore
+    - Água
+    - O som da chuva
+    - O canto dos pássaros
+    - O vento nas árvores
+    - O som da água na torneira
+    - Música tocando no fundo
+    - O som do relógio
+    - O som do teclado ao digitar
+    - O som de respiração
+    - Som de carros na rua
+    - Som de buzina
+    - Tecido
+    - Papel
+    - Lápis
+    - Caneta
+    - Mochila
+    - Óculos
+    - Fone de ouvido
+    - Chave
+    - Perfume
+    - Cheiro de café
+    - Cheiro de terra molhada
+    - Cheiro de comida
+    - Cheiro de queimado
+    - Aroma de flores
+    - Aroma de incenso
+    - Cheiro de produto de limpeza
+    - Café
+    - Chá
+    - Refrigerante
+    - Bala
+    - Chiclete
+    - Fruta
+    - Chocolate
+    - Pão
+    - Gosto de pasta de dente
+    - Gosto de creme dental
+    - Gosto de enxaguante bucal
+    - técnica 5,4,3,2,1 por favor
+    - televisão, computador, celular, papel, garrafa
+    - teclado, mesa, celular, monitor
+    - a televisão, os pássaros e o som da panela
+    - cheiro de comida e perfume
+    - água
+    - cheiro de comida e bebida
+    - gosto de cerveja
+    - celular, copo, caixa de som, caneta, fita
+    - teclado, copo, celular, caneta
+    - som de carro, música e vozes
+    - cheiro de perfume e cheiro de comida
+    - gosto de refrigerante
+    - monitor, tv, copo, teclado, mouse
+    - quadro, livros, caneca, cachorro e televisão.
+    - computador, copo, caneca e papel
+    - som do ventilador, televisão e pessoas conversando
+    - creme de cabelo e café
+    - pipoca
+    - livro, cadeira, copo, grrafa, controle
+    - mouse, controle, garrafa, teclado
+    - musica, passaros, conversa
+    - hidratante labial e salgado de festa
+    - coxinha
+    - computador, televisão, controle, copo, batom
+    - mouse, controle, teclado, cabelo
+    - conversa, musica, vídeo
+    - creme de cabelo, hidratante labial
+    - hudratante labial
+    - livro, pc, celular, televisão, copo
+    - contole, mouse, teclado celular
+    - vídeo, música
+    - coxinha e creme de cabelo
+- intent: start_coping_technique
+  examples: |
+    - Gostaria de saber a técnica 5,3,4,2,1 por favor
+    - quero saber sobre a técnica 5,4,3,2,1 por favor
+    - me explique a técnica 5,4,3,2,1 por favor
+    - 5,4,3,3,1
+    - 5, 4, 3, 2, 1
+    - técnica 5,4,3,2,1
+    - técnica 54321
+- intent: coping_technique_cancel
+  examples: |
+    - Não quero continuar
+    - Acho que não quero mais
+    - Prefiro tentar outra coisa
+    - Podemos parar? Por favor
+    - Não estou gostando dessa técnica
+    - Não sinto que está funcionando
+    - não quero continuar
+- intent: nlu_fallback
+  examples: |
+    - testando testando testando
+- intent: ask_guided
+  examples: |
+    - respiração profunda por favor
+    - Como posso controlar a respiração quando estou ansioso?
+    - respiração
+    - respiração profunda
+- synonym: feliz
+  examples: |
+    - tive um ótimo dia
+    - contente
+    - alegre
+    - radiante
+    - empolgado
+    - ótimo
+    - melhor
+    - bem
+- synonym: calmo
+  examples: |
+    - tranquilo
+    - sereno
+    - relaxado
+    - em paz
+- synonym: triste
+  examples: |
+    - horrível
+    - nada bem
+    - medo
+    - decepcionado
+    - mal
+    - infeliz
+    - deprimido
+    - desanimado
+    - para baixo
+- synonym: ansioso
+  examples: |
+    - estressado
+    - preocupado
+    - preocupada
+    - tenho medo
+    - com medo
+    - estressada
+    - ansioso
+    - desesperado
+- synonym: irritado
+  examples: |
+    - bravo
+    - puto
+    - raiva
+    - irritada
+    - possesso
+    - com raiva

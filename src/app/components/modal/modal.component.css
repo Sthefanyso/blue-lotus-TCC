@@ -1,0 +1,60 @@
+.modal {
+
+    /* Cor e bordas  */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+
+     /* Tamanho e posição do modal  */
+    width: 420px;
+    height: 380px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content img{
+    margin-top: 1rem;
+}
+
+img{
+    width: 12rem;
+    height: 12rem;
+    padding: 0;
+    margin: 0;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+p{
+    text-align: center;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-green{
+    background-color: #239987;
+    color: #FFFF;
+    font-size: large;
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

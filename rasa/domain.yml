@@ -1,0 +1,145 @@
+version: '3.1'
+intents:
+- affirm
+- ask_about_anxiety
+- ask_for_tips
+- ask_guided
+- ask_relaxation_techniques
+- bot_ask
+- coping_technique_cancel
+- deny
+- goodbye
+- greet
+- identify_symptoms
+- identify_thoughts
+- mood_happy
+- nlu_fallback
+- reflect_on_thought
+- seek_professional_help
+- seek_serious_help
+- share_bad_feeling
+- share_progress
+- start_coping_technique
+- thank_you
+- user_response
+entities:
+- thought
+- feeling
+slots:
+  feeling:
+    type: categorical
+    values:
+    - triste
+    - ansioso
+    - bravo
+    - feliz
+    - calmo
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: feeling
+      intent:
+      - share_bad_feeling
+      - mood_happy
+responses:
+  utter_welcome:
+  - text: De nada! Espero ter ajudado.
+  utter_greet:
+  - text: Olá! Como você está se sentindo hoje?
+  utter_goodbye:
+  - text: Até logo! Lembre-se de que estou aqui sempre que precisar.
+  utter_acknowledge_feelings:
+  - text: Entendo que você está se sentindo {feeling}. Vou registrar isso pra você.
+  utter_sad:
+  - text: Sinto muito que você esteja triste. Lembre-se que os dias difíceis passam, se quiser me contar o que aconteceu, estou te ouvindo
+  utter_relaxation_techniques:
+  - text: 'Aqui estão algumas técnicas de relaxamento: respiração profunda ou técnica 5,4,3,2,1. Qual você gostaria de tentar?'
+  utter_guide_relaxation:
+  - text: Vamos começar com um exercício simples. Respire fundo, inspire por 4 segundos, segure por 4 segundos e expire por 4 segundos. Faça isso por alguns minutos. Como se sente agora?
+  utter_acknowledge_progress:
+  - text: Parabéns por tentar algo novo! Isso é um grande passo. Continue assim!
+  utter_anxiety_info:
+  - text: A ansiedade é uma resposta natural ao estresse. Ela pode incluir preocupação, medo ou desconforto físico. Posso ajudar com algumas técnicas para lidar com isso.
+  utter_further_info:
+  - text: Claro! Ansiedade pode surgir de várias situações, mas também pode ser gerenciada com suporte e estratégias eficazes.
+  utter_recommend_help:
+  - text: Se achar necessário, considere procurar um terapeuta ou psicólogo. Eles podem oferecer suporte especializado.
+  utter_identify_distorted_thoughts:
+  - text: Vamos identificar juntos os pensamentos negativos. Pode me dizer o que está passando pela sua cabeça?
+  utter_suggest_realistic_thoughts:
+  - text: Uma maneira de lidar com isso é reavaliar o pensamento. O que você acha que poderia ser uma interpretação mais equilibrada?
+  utter_guide_realistic_thought:
+  - text: Ótimo! Pense em algo positivo que contradiga o pensamento negativo. Isso pode ajudar a mudar sua perspectiva.
+  utter_iamabot:
+  - text: Sou um assistente virtual, um programa projetado para ajudar com questões relacionadas à ansiedade e bem-estar emocional.  Posso oferecer estratégias, informações e apoio, no entanto, é importante lembrar que não sou um profissional humano e não posso substituir a ajuda de um terapeuta ou psicólogo. Se precisar de suporte mais especializado, por favor procure um profissional capacitado. Como posso ajudar você agora?
+  utter_happy:
+  - text: ' Fico muito feliz em saber que você está se sentindo bem! Aproveite este momento e continue cuidando de si mesmo. Se precisar de ajuda ou apenas quiser compartilhar algo, estou aqui! 😊'
+  - text: Que ótimo ouvir isso! Momentos de felicidade são preciosos. Continue aproveitando o dia e, se precisar de ajuda no futuro, pode contar comigo.
+  - text: Isso é maravilhoso! Celebrar momentos de bem-estar é importante. Se quiser conversar sobre algo ou explorar novas ideias, é só me chamar.
+  utter_offer_help:
+  - text: Estou aqui para ajudar! Podemos explorar juntos técnicas, estratégias ou simplesmente conversar. Como posso te ajudar agora?
+  - text: Me diga como posso ajudar você hoje. Estou aqui para oferecer apoio e orientação.
+  utter_help_with_thoughts:
+  - text: Vamos trabalhar juntos para entender seus pensamentos. Às vezes, nossos pensamentos podem ser mais negativos do que a realidade. Que tal analisarmos isso juntos?
+  - text: Estou aqui para ajudar com os pensamentos que estão te incomodando. Podemos identificar quais deles não são úteis e tentar reformulá-los de maneira mais equilibrada.
+  utter_reframe_thoughts:
+  - text: ' Vamos tentar reformular esse pensamento juntos.  Se essa situação fosse vivida por outra pessoa, o que você diria para ela? Talvez isso possa trazer uma perspectiva mais equilibrada.'
+  - text: Que tal pensarmos em algo mais positivo ou realista? Por exemplo, em vez de [pensamento negativo], podemos considerar [pensamento alternativo]. Como isso soa para você?
+  - text: Reformular pensamentos pode ser desafiador, mas também poderoso. Existe algo que você pode focar, como suas forças ou o apoio ao seu redor, que ajude a mudar essa perspectiva?
+  utter_ask_to_reframe_thoughts:
+  - text: ' Você já tentou ver essa situação de outra perspectiva? O que você acha que poderia ser uma interpretação mais realista ou positiva?'
+  - text: 'Vamos pensar juntos: há outra maneira de entender ou interpretar esse pensamento? Algo que possa ser mais equilibrado ou menos estressante?'
+  - text: Às vezes, reavaliar nossos pensamentos pode ajudar muito. Que tal tentarmos encontrar uma forma mais positiva ou construtiva de olhar para isso?
+  utter_coping_technique_1:
+  - text: A técnica 5-4-3-2-1 é uma forma simples de se acalmar e focar no momento presente usando seus sentidos. Primeiro me diga cinco coisas que você consegue observar ao seu redor nesse momento.
+  utter_coping_technique_2:
+  - text: Muito bem! Agora me diga quatro coisas que você consegue tocar.
+  utter_coping_technique_3:
+  - text: Você está indo bem! Nesse momento, tente notar três coisas que você consegue ouvir.
+  utter_coping_technique_4:
+  - text: Certo! Agora diga dois cheiros que você consegue sentir.
+  utter_coping_technique_5:
+  - text: Por último, concentre-se em um sabor que você consegue provar.
+  utter_coping_technique_finish:
+  - text: Parabéns! Você concluiu a técnica, como se sente agora?
+  utter_coping_technique_cancel:
+  - text: Tudo bem! Se você não quiser continuar, não tem problema. Podemos tentar outra técnica ou apenas conversar sobre outro assunto, o que você prefere?
+  utter_out_of_scope:
+  - text: Desculpe, não estou equipado para lidar com isso.
+  utter_please_rephrase:
+  - text: Desculpe, não entendi. Poderia repetir de outra forma?
+  utter_default:
+  - text: Desculpe, não entendi. Poderia repetir de outra forma?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_coping_technique_finish
+- utter_coping_technique_2
+- action_save_feeling_to_db
+- utter_coping_technique_1
+- utter_welcome
+- utter_coping_technique_5
+- utter_sad
+- utter_coping_technique_3
+- action_reformular_pensamento
+- utter_relaxation_techniques
+- utter_acknowledge_feelings
+- utter_coping_technique_4
+- utter_greet
+- action_restart_conversation
+- utter_guide_relaxation
+- action_provide_suicide_help
+- utter_please_rephrase
+- utter_goodbye
+- utter_acknowledge_progress
+- utter_offer_help
+- utter_anxiety_info
+- utter_help_with_thoughts
+- utter_identify_distorted_thoughts
+- utter_coping_technique_cancel
+- utter_guide_realistic_thought
+- utter_happy
+- utter_suggest_realistic_thoughts
+- utter_iamabot
+- utter_reframe_thoughts

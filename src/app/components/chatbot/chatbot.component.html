@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="navigation">
+        <div class="side-bar">
+            <div class="return">
+            </div>
+            <div class="logo">
+                <img src="../assets/chatbot/logo.svg" alt="">
+            </div>
+            <div class="buttons">
+                <button (click)="refresh()">
+                    Nova conversa
+                </button>
+                <button (click)="feelingRegister()">
+                    Registros
+                </button>
+                <div class="box-model-profile">
+                    <div class="logo-profile">
+                        <img src="../assets/chatbot/icon-logo.svg" alt="">
+                    </div>
+                    <div class="info-profile">
+                        <h3>{{user.name}} {{user.surname}}</h3>
+                        <p>{{user.email}}</p>
+                        <button (click)="logout()"><img src="../assets/chatbot/exit-button.svg" alt="">
+                            Logout </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="chat-body" id="chat-body">
+            <div class="text-box bot-message">
+                <div class="message">
+                Olá! Como posso ajudar você hoje?
+                </div>
+                <div class="decor bot"></div>
+            </div>
+        </div>
+        <div id="typing-indicator" *ngIf="isTyping">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        <div class="chat-footer">
+            <input type="text" autocomplete="off" id="user-input" placeholder="Digite sua mensagem...">
+            <button class="send-button" (click)="sendMessage()"><img src="/../assets/chatbot/send-button.png" alt=""></button>
+        </div>
+    </div>
+</div>

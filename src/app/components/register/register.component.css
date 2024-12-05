@@ -1,0 +1,230 @@
+/* Container da página */ 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative; 
+    /* Faz o conteúdo ocupar toda largura e altura da viewport(tela) */ 
+    width: 100%;
+    height: 100vh; 
+}
+
+/* Definição das imagens de fundo da tela */ 
+.container::before {
+    /* 
+    O content cria um pseudo elemento antes e depois do container
+    O position absolute torna o elemento absoluto dentro daquele container
+    Top e left posicionam o elemento no início e no final do container
+    */ 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('/../assets/register/left-wave.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+    z-index: -1;
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 50%;
+    background-image: url("/../assets/login/right-wave.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right top;
+    z-index: -1;
+  }
+
+/* Definição do tamanho, margem e bordas da box-model */ 
+.box-model{
+    width: 50%;
+    height: 80vh;
+    margin: 4rem auto;
+    background-color: #FFFF;
+    border-radius: 1em;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+/* Header que abriga o titulo e o botão close */ 
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#title{
+    text-transform: initial;
+    font-size: x-large;
+    margin: 2rem 0 1rem 0rem;
+    flex-grow: 1;
+}
+
+#close-btn{
+    border: none;
+    background-color: transparent;
+}
+
+#close-btn:hover{
+    cursor: pointer;
+}
+
+.errorMessage{
+    color: red;
+    font-size: 0.75rem;
+}
+
+#close-btn img{
+    width: 2.5rem;
+}
+
+/* Tag main que engloba e centraliza o formulário*/ 
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilização dos campos do form */
+
+.box-form{
+    width: 100%;
+}
+
+.box-form input{
+    width: 100%;
+    height: 2em;
+    margin: 0.5rem 0rem;
+    border-radius: 0.5em;
+    border: 0.1em solid #BCBEC0;
+}
+
+.box-form p{
+    margin-bottom: 0.2rem;
+    font-size: small;
+}
+
+/* Adiciona margem a esquerda dentro dos campos de texto do form*/ 
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"] {
+    padding-left: 0.5rem;
+
+
+}
+
+/* Footer - check do termos de uso e botão "criar" */
+.footer input{
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.footer button{
+    margin-left: 30%;
+    background-color: #239987;
+    color: #FFFF;
+    border: none;
+    border-radius: 0.5rem;
+    width: 8rem;
+    height: 2rem;
+}
+
+.footer button:disabled{
+    background-color: #80cab6;
+}
+
+.footer button:hover{
+    cursor: pointer;
+}
+
+.footer label{
+    color: #154087;
+}
+
+/* Adiciona o espaço entre o checkbox e a legenda*/ 
+.spaced{
+    margin-left: 0.5rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.col{
+    margin: 0.5rem;
+}
+
+.col-6{
+    width: 50%;
+}
+
+.col-12{
+    width: 100%;
+}
+
+.col-4{
+    width: 33.3%;
+}
+
+.col-3{
+    width: 25%;
+}
+
+
+.select {
+    position: relative;
+    overflow: hidden;
+  }
+   
+  .select select {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    appearance: none;
+  }
+
+  .select{
+    border-radius: 0.5em;
+    padding: 0.2em;
+    border: 0.075em solid #BCBEC0;
+
+  }
+
+  .select::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+  }
+  
+
+  @media (min-width: 1920px) {
+
+    .header #title{
+        font-size: 2.5rem;
+    }
+
+    label{
+        font-size: 2rem;
+    }
+
+}

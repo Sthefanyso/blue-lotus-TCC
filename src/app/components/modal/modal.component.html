@@ -1,0 +1,10 @@
+<div class="modal" *ngIf="show">
+    <div class="modal-content">
+      <h2>{{ title }}</h2>
+      <p>{{ message }}</p>
+      <img [src]="imageUrl" alt="Carregando...">
+      <div class="btn">
+        <button class="btn-green" (click)="close()">Fechar</button>
+      </div>
+    </div>
+  </div>

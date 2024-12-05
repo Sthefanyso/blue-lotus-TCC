@@ -1,0 +1,293 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_happy
+    - action: utter_happy
+
+- story: thankyou
+  steps:
+    - intent: thank_you
+    - action: utter_welcome
+    - action: action_listen
+
+- story: responder sobre suicídio
+  steps:
+    - intent: seek_serious_help
+    - action: action_provide_suicide_help
+
+- story: guided relaxation
+  steps:
+    - intent: ask_guided
+    - action: utter_guide_relaxation
+
+- story: user shares negative thoughts
+  steps:
+    - intent: share_bad_feeling
+    - action: utter_acknowledge_feelings
+    - intent: identify_thoughts
+    - action: action_reformular_pensamento
+
+
+- story: rethink negative thoughts
+  steps:
+    - intent: identify_thoughts
+    - action: action_reformular_pensamento
+
+- story: user asks for relaxation techniques
+  steps:
+    - intent: ask_relaxation_techniques
+    - action: utter_relaxation_techniques
+    - intent: ask_guided
+    - action: utter_guide_relaxation
+    - intent: share_progress
+    - action: utter_acknowledge_progress
+
+- story: user asks about anxiety
+  steps:
+    - intent: ask_about_anxiety
+    - action: utter_anxiety_info
+    - intent: affirm
+    - action: utter_further_info
+
+- story: user seeks professional help
+  steps:
+    - intent: seek_professional_help
+    - action: utter_recommend_help
+
+- story: user shares distorted thought
+  steps:
+    - intent: identify_thoughts
+    - action: action_reformular_pensamento
+
+- story: interactive_story_70
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: seek_professional_help
+  - action: action_reformular_pensamento
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+  - intent: share_progress
+  - action: utter_acknowledge_progress
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_happy
+  - action: utter_happy
+  - intent: mood_happy
+  - action: utter_happy
+  - intent: thank_you
+  - action: utter_welcome
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_ask
+  - action: utter_iamabot
+  - intent: ask_about_anxiety
+  - action: utter_anxiety_info
+  - intent: thank_you
+  - action: utter_welcome
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: ask_for_tips
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: ask_for_tips
+  - intent: reflect_on_thought
+  - action: action_reformular_pensamento
+  - intent: share_progress
+  - action: utter_acknowledge_progress
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_ask
+  - action: utter_iamabot
+  - intent: deny
+  - intent: bot_ask
+  - action: utter_iamabot
+  - intent: bot_ask
+  - action: utter_iamabot
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_progress
+  - intent: share_bad_feeling
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_progress
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: share_progress
+  - intent: identify_thoughts
+  - action: action_reformular_pensamento
+  - intent: share_bad_feeling
+  - action: utter_suggest_realistic_thoughts
+  - intent: ask_about_anxiety
+  - intent: share_bad_feeling
+  - action: utter_guide_realistic_thought
+  - intent: mood_happy
+  - action: utter_acknowledge_progress
+  - intent: thank_you
+  - action: utter_welcome
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_anxiety
+  - action: utter_anxiety_info
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: share_bad_feeling
+  - action: utter_acknowledge_feelings
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+
+
+- story: Técnica 5-4-3-2-1
+  steps:
+  - intent: start_coping_technique
+  - action: utter_coping_technique_1
+  - intent: user_response
+  - action: utter_coping_technique_2
+  - intent: user_response
+  - action: utter_coping_technique_3
+  - intent: user_response
+  - action: utter_coping_technique_4
+  - intent: user_response
+  - action: utter_coping_technique_5
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_relaxation_techniques
+  - action: utter_relaxation_techniques
+  - intent: start_coping_technique
+  - action: utter_coping_technique_1
+  - intent: user_response
+  - action: utter_coping_technique_2
+  - intent: user_response
+  - action: utter_coping_technique_3
+  - intent: user_response
+  - action: utter_coping_technique_4
+  - intent: user_response
+  - action: utter_coping_technique_5
+  - intent: user_response
+  - action: utter_coping_technique_finish
+  - intent: user_response
+  - action: utter_coping_technique_cancel
+  - intent: user_response
+
+
+- story: mood_sad
+  steps:
+    - intent: share_bad_feeling
+      entities:
+        - feeling: triste    
+    - action: utter_acknowledge_feelings
+    - action: action_save_feeling_to_db
+    - action: utter_sad
+
+- story: mood_stressed
+  steps:
+    - intent: share_bad_feeling
+      entities:
+        - feeling: ansioso
+    - action: utter_acknowledge_feelings
+    - action: action_save_feeling_to_db
+    - action: utter_relaxation_techniques
+
+- story: mood_happy
+  steps:
+    - intent: mood_happy
+      entities:
+        - feeling: feliz
+    - action: utter_acknowledge_feelings
+    - action: action_save_feeling_to_db
+    - action: utter_happy
+
+- story: mood_calm
+  steps:
+    - intent: share_bad_feeling
+      entities:
+        - feeling: calmo
+    - action: utter_acknowledge_feelings
+    - action: action_save_feeling_to_db
+    - action: utter_happy
+
+- story: mood_angry
+  steps:
+    - intent: share_bad_feeling
+      entities:
+        - feeling: irritado
+    - action: utter_acknowledge_feelings
+    - action: action_save_feeling_to_db
+    - action: utter_relaxation_techniques
